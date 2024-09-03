@@ -33,7 +33,7 @@ const [loading, setLoading] = useState(false);
 const navigate = useNavigate();
 
 const addToCart = async () => {
-  if (process.env.REACT_APP_API_URL+product && process.env.REACT_APP_API_URL+product !== null && process.env.REACT_APP_API_URL+product !== undefined && process.env.REACT_APP_API_URL+product.quantity > 0) {
+  if (product && product !== null && product !== undefined && product.quantity > 0) {
       setLoading(true)
       await add_item(product);
       await get_items();

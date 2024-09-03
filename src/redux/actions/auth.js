@@ -263,11 +263,14 @@ export const refresh = () => async (dispatch) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
+      withCredentials: true, // Opcional, solo si necesitas enviar cookies
     };
 
     const body = JSON.stringify({
       refresh: localStorage.getItem("refresh"),
     });
+
+    console.log("Refresh token:", body);
 
     try {
       const res = await axios.post(
@@ -275,12 +278,15 @@ export const refresh = () => async (dispatch) => {
         body,
         config
       );
+      console.log("Response Refresh token:", res.data);
 
       if (res.status === 200) {
         dispatch({
           type: REFRESH_SUCCESS,
           payload: res.data,
         });
+        localStorage.setItem("access", res.data.access);
+        localStorage.setItem("refresh", res.data.refresh);
       } else {
         dispatch({
           type: REFRESH_FAIL,
