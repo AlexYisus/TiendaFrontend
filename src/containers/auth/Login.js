@@ -28,6 +28,9 @@ const Login = ({ login, loading, isAuthenticated }) => {
     setActivated(true);
   };
 
+  if (activated && !loading)
+    return <Navigate to='/' />;
+  
   return (
     <Layout>
       <div className="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8">
