@@ -9,15 +9,18 @@ import Banner from '../components/home/Banner'
 import Products from "../redux/reducers/products";
 import ProductsArrival from "../components/home/ProductsArrival";
 import ProductsSold from "../components/home/ProductsSold";
+import { useNavigate } from "react-router-dom";
 
 
 const Home = ({
     get_products_by_arrival, 
     get_products_by_sold,
     products_arrival,
-    products_sold
+    products_sold,
+    isAuthenticated
 }) => {
 
+  const navigate = useNavigate();
     useEffect(() => {
 
         get_products_by_arrival();
@@ -38,6 +41,7 @@ const Home = ({
 const mapStateToProps = state => ({
     products_arrival: state.Products.products_arrival,
     products_sold: state.Products.products_sold,
+    isAuthenticated: state.Auth.isAuthenticated,
 })
 
 export default connect(mapStateToProps,{

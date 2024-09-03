@@ -25,7 +25,6 @@ export const get_products = () => async dispatch => {
 
     try { 
         const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/product/get-products`, config);
-    
         if (res.status === 200) {
             dispatch({
                 type: GET_PRODUCTS_SUCCESS,

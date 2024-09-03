@@ -52,9 +52,7 @@ const Dashboard =({
     isAuthenticated,
     user
 })=>{
-
     const [sidebarOpen, setSidebarOpen] = useState(false)
-
     useEffect(() => {
         get_items()
         get_total()
@@ -191,8 +189,7 @@ const Dashboard =({
           <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
             <dt className="text-sm font-medium text-gray-500">Full name</dt>
             <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              <span className="flex-grow">{user.first_name} {user.last_name}</span>
-              
+              <span className="flex-grow">{user?.first_name} {user?.last_name}</span>
             </dd>
           </div>
 
@@ -200,7 +197,7 @@ const Dashboard =({
           <div className="py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4">
             <dt className="text-sm font-medium text-gray-500">Email address</dt>
             <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              <span className="flex-grow">{user.email}</span>
+              <span className="flex-grow">{user?.email}</span>
               
             </dd>
           </div>
