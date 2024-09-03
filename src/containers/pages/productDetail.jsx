@@ -33,7 +33,7 @@ const [loading, setLoading] = useState(false);
 const navigate = useNavigate();
 
 const addToCart = async () => {
-  if (product && product !== null && product !== undefined && product.quantity > 0) {
+  if (process.env.REACT_APP_API_URL+product && process.env.REACT_APP_API_URL+product !== null && process.env.REACT_APP_API_URL+product !== undefined && process.env.REACT_APP_API_URL+product.quantity > 0) {
       setLoading(true)
       await add_item(product);
       await get_items();
@@ -58,7 +58,7 @@ const addToCart = async () => {
            <div className="bg-white">
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-start">
-            <ImageGallery photo={product && product.photo}/>
+            <ImageGallery photo={process.env.REACT_APP_API_URL+product && process.env.REACT_APP_API_URL+product.photo}/>
 
           {/* Product info */}
           <div className="mt-10 px-4 sm:px-0 sm:mt-16 lg:mt-0">
@@ -66,7 +66,7 @@ const addToCart = async () => {
 
             <div className="mt-3">
               <h2 className="sr-only">información del producto</h2>
-              <p className="text-3xl text-gray-900">${product && product.price}</p>
+              <p className="text-3xl text-gray-900">{product && product.price}</p>
             </div>
             <div className="mt-6">
               <h3 className="sr-only">Descripciónn</h3>
