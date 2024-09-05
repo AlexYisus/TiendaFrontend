@@ -47,7 +47,7 @@ export default function ProductsArrival({
           }
         </div>
 
-        <Link to="/shop" className="mt-12 bg-black text-white py-4 px-12 rounded-full hover:bg-gray-600 duration-300">Ver más</Link>
+        <Link to="/shop" className="mt-12 bg-gray-800 text-white py-4 px-12 rounded-full hover:bg-gray-600 duration-300">Ver más</Link>
       </div>
     </div>
   )
