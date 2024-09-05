@@ -1,25 +1,26 @@
 import { Fragment, useEffect, useState } from 'react'
-import { Menu ,Popover, Transition } from '@headlessui/react'
+import { Menu, Popover, Transition } from '@headlessui/react'
 import { NavLink, Link } from 'react-router-dom'
 import { Navigate } from 'react-router'
+import { IoBagOutline } from "react-icons/io5";
 
 import {
-  BookmarkAltIcon,
-  BriefcaseIcon,
-  ChartBarIcon,
-  CheckCircleIcon,
-  CursorClickIcon,
-  DesktopComputerIcon,
-  GlobeAltIcon,
-  InformationCircleIcon,
+  // BookmarkAltIcon,
+  // BriefcaseIcon,
+  // ChartBarIcon,
+  // CheckCircleIcon,
+  // CursorClickIcon,
+  // DesktopComputerIcon,
+  // GlobeAltIcon,
+  // InformationCircleIcon,
   MenuIcon,
-  NewspaperIcon,
-  OfficeBuildingIcon,
-  PhoneIcon,
-  PlayIcon,
-  ShieldCheckIcon,
-  UserGroupIcon,
-  ViewGridIcon,
+  // NewspaperIcon,
+  // OfficeBuildingIcon,
+  // PhoneIcon,
+  // PlayIcon,
+  // ShieldCheckIcon,
+  // UserGroupIcon,
+  // ViewGridIcon,
   XIcon,
 } from '@heroicons/react/outline'
 import { connect } from 'react-redux'
@@ -27,65 +28,64 @@ import { logout } from '../../redux/actions/auth'
 import { get_categories } from '../../redux/actions/categories'
 import { get_search_products } from '../../redux/actions/products';
 import SearchBox from './SearchBox'
-import { ShoppingCartIcon } from '@heroicons/react/solid'
 
-const solutions = [
-  {
-    name: 'Analytics',
-    description: 'Get a better understanding of where your traffic is coming from.',
-    href: '#',
-    icon: ChartBarIcon,
-  },
-  {
-    name: 'Engagement',
-    description: 'Speak directly to your customers in a more meaningful way.',
-    href: '#',
-    icon: CursorClickIcon,
-  },
-  { name: 'Security', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
-  {
-    name: 'Integrations',
-    description: "Connect with third-party tools that you're already using.",
-    href: '#',
-    icon: ViewGridIcon,
-  },
-]
-const callsToAction = [
-  { name: 'Watch Demo', href: '#', icon: PlayIcon },
-  { name: 'View All Products', href: '#', icon: CheckCircleIcon },
-  { name: 'Contact Sales', href: '#', icon: PhoneIcon },
-]
-const company = [
-  { name: 'About', href: '#', icon: InformationCircleIcon },
-  { name: 'Customers', href: '#', icon: OfficeBuildingIcon },
-  { name: 'Press', href: '#', icon: NewspaperIcon },
-  { name: 'Careers', href: '#', icon: BriefcaseIcon },
-  { name: 'Privacy', href: '#', icon: ShieldCheckIcon },
-]
-const resources = [
-  { name: 'Community', href: '#', icon: UserGroupIcon },
-  { name: 'Partners', href: '#', icon: GlobeAltIcon },
-  { name: 'Guides', href: '#', icon: BookmarkAltIcon },
-  { name: 'Webinars', href: '#', icon: DesktopComputerIcon },
-]
-const blogPosts = [
-  {
-    id: 1,
-    name: 'Boost your conversion rate',
-    href: '#',
-    preview: 'Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1558478551-1a378f63328e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2849&q=80',
-  },
-  {
-    id: 2,
-    name: 'How to use search engine optimization to drive traffic to your site',
-    href: '#',
-    preview: 'Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80',
-  },
-]
+// const solutions = [
+//   {
+//     name: 'Analytics',
+//     description: 'Get a better understanding of where your traffic is coming from.',
+//     href: '#',
+//     icon: ChartBarIcon,
+//   },
+//   {
+//     name: 'Engagement',
+//     description: 'Speak directly to your customers in a more meaningful way.',
+//     href: '#',
+//     icon: CursorClickIcon,
+//   },
+//   { name: 'Security', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
+//   {
+//     name: 'Integrations',
+//     description: "Connect with third-party tools that you're already using.",
+//     href: '#',
+//     icon: ViewGridIcon,
+//   },
+// ]
+// const callsToAction = [
+//   { name: 'Watch Demo', href: '#', icon: PlayIcon },
+//   { name: 'View All Products', href: '#', icon: CheckCircleIcon },
+//   { name: 'Contact Sales', href: '#', icon: PhoneIcon },
+// ]
+// const company = [
+//   { name: 'About', href: '#', icon: InformationCircleIcon },
+//   { name: 'Customers', href: '#', icon: OfficeBuildingIcon },
+//   { name: 'Press', href: '#', icon: NewspaperIcon },
+//   { name: 'Careers', href: '#', icon: BriefcaseIcon },
+//   { name: 'Privacy', href: '#', icon: ShieldCheckIcon },
+// ]
+// const resources = [
+//   { name: 'Community', href: '#', icon: UserGroupIcon },
+//   { name: 'Partners', href: '#', icon: GlobeAltIcon },
+//   { name: 'Guides', href: '#', icon: BookmarkAltIcon },
+//   { name: 'Webinars', href: '#', icon: DesktopComputerIcon },
+// ]
+// const blogPosts = [
+//   {
+//     id: 1,
+//     name: 'Boost your conversion rate',
+//     href: '#',
+//     preview: 'Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.',
+//     imageUrl:
+//       'https://images.unsplash.com/photo-1558478551-1a378f63328e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2849&q=80',
+//   },
+//   {
+//     id: 2,
+//     name: 'How to use search engine optimization to drive traffic to your site',
+//     href: '#',
+//     preview: 'Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.',
+//     imageUrl:
+//       'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80',
+//   },
+// ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -110,10 +110,10 @@ function Navbar({
     search: ''
   });
   const { category_id, search } = formData;
-  
+
   useEffect(() => {
     get_categories()
-  }, [])
+  }, [get_categories])
 
   const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -123,7 +123,7 @@ function Navbar({
     setRender(!render);
   }
 
-  if(render){
+  if (render) {
     return <Navigate to='/search' />;
   }
 
@@ -132,7 +132,7 @@ function Navbar({
     setRedirect(true);
   }
 
-  if (redirect){
+  if (redirect) {
     window.location.reload(false)
     return <Navigate to='/' />;
   }
@@ -173,8 +173,8 @@ function Navbar({
                 </Link>
               )}
             </Menu.Item>
-            
-            
+
+
             <form method="POST" action="#">
               <Menu.Item>
                 {({ active }) => (
@@ -198,12 +198,12 @@ function Navbar({
 
   const guestLinks = (
     <Fragment>
-      <Link to="/login" className="text-base font-medium text-gray-500 hover:text-gray-900">
+      <Link to="/login" className="text-base font-medium text-gray-500 hover:text-gray-900 ml-4">
         Iniciar Sesión
       </Link>
       <Link
         to="/signup"
-        className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+        className="ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
       >
         Registrarse
       </Link>
@@ -211,10 +211,11 @@ function Navbar({
   )
 
   return (
-  
+
     <Popover className="relative bg-white">
       <div className="absolute inset-0  z-30 pointer-events-none" aria-hidden="true" />
-      <div className="relative z-20">
+      <div className="relative h-12 w-screen"></div>
+      <div className="fixed w-screen top-0 left-0 z-20 bg-white">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-8 md:justify-start md:space-x-10">
           <div>
             <Link to="/" className="flex">
@@ -227,11 +228,11 @@ function Navbar({
             </Link>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
-            
+
             <Link to="/cart" className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span className="sr-only">Open menu</span>
-              <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-              <span className="text-xs absolute top-1 mt-3 ml-4 bg-red-500 text-white font-semibold rounded-full px-2 text-center">{total_items}</span>
+              <IoBagOutline className="h-6 w-6 text-black" aria-hidden="true" />
+              <span className="text-xs absolute bottom-0 mb-3 ml-4 bg-red-500 text-white font-semibold rounded-full p-1 text-center h-6 w-6 flex justify-center items-center">{total_items}</span>
             </Link>
             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span className="sr-only">Open menu</span>
@@ -240,33 +241,29 @@ function Navbar({
           </div>
           <div className="hidden md:flex-1 md:flex md:items-center md:justify-between">
             <Popover.Group as="nav" className="flex space-x-10">
-              
-              <NavLink to="/shop" className={window.location.pathname==='/search'?' text-base font-medium text-gray-500 hover:text-gray-900':'mt-2 text-base font-medium text-gray-500 hover:text-gray-900'}>
-                Tienda
-              </NavLink>
-              
-              {window.location.pathname==='/search'?<></>:<SearchBox 
-              search={search}
-              onChange={onChange}
-              onSubmit={onSubmit}
-              categories={categories}
-              />}
-              
-             
+
             </Popover.Group>
             <div className="flex items-center md:ml-12">
+              {window.location.pathname === '/search' ? <></> : <SearchBox
+                search={search}
+                onChange={onChange}
+                onSubmit={onSubmit}
+                categories={categories}
+              />}
+              <NavLink to="/shop" className={window.location.pathname === '/search' ? ' text-base font-medium text-black hover:text-gray-500' : 'text-base font-medium text-black hover:text-gray-500 mr-4'}>
+                Tienda
+              </NavLink>
               <Link to="/cart">
-                <ShoppingCartIcon className="h-8 w-8 cursor-pointer text-gray-300 mr-4"/>
-                <span className="text-xs absolute top-1 mt-3 ml-4 bg-red-500 text-white font-semibold rounded-full px-2 text-center">{total_items}</span>
+                <IoBagOutline className="h-8 w-8 cursor-pointer text-black mr-4" />
+                <span className="text-xs absolute bottom-0 mb-4 ml-4 bg-red-500 text-white font-semibold rounded-full p-1 text-center h-6 w-6 flex justify-center items-center">{total_items}</span>
               </Link>
-                {
-                  isAuthenticated ? authLinks:guestLinks
-                }
+              {
+                isAuthenticated ? authLinks : guestLinks
+              }
             </div>
           </div>
         </div>
       </div>
-
       <Transition
         as={Fragment}
         enter="duration-200 ease-out"
@@ -301,27 +298,27 @@ function Navbar({
               </div>
             </div>
             <div className="py-6 px-5">
-             
+
               <div className="mt-6">
-              {isAuthenticated?<Link
+                {isAuthenticated ? <Link
                   to="/dashboard"
                   className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                 >
                   Iniciar Sesión
-                </Link>:
-                <a
-                href="#"
-                className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-              >
-                Registrarse
-              </a>}
-                
+                </Link> :
+                  <a
+                    href="/"
+                    className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                  >
+                    Registrarse
+                  </a>}
+
 
                 <p className="mt-6 text-center text-base font-medium text-gray-500">
                   Ya tienes cuenta?{' '}
-                  
-                  
-                  <a href="#" className="text-indigo-600 hover:text-indigo-500">
+
+
+                  <a href="/" className="text-indigo-600 hover:text-indigo-500">
                     Iniciar Sesión
                   </a>
                 </p>
@@ -342,8 +339,8 @@ const mapStateToProps = state => ({
   total_items: state.Cart.total_items
 })
 
-export default connect(mapStateToProps,{
+export default connect(mapStateToProps, {
   logout,
   get_categories,
   get_search_products
-}) (Navbar)
+})(Navbar)

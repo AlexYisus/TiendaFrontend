@@ -4,8 +4,10 @@ import { Link, Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { login } from "../../redux/actions/auth";
 import { useNavigate } from "react-router-dom";
+import { VscEye, VscEyeClosed } from "react-icons/vsc";
 
 const Login = ({ login, loading, isAuthenticated }) => {
+  const [showPassword, setShowPassword] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -28,9 +30,13 @@ const Login = ({ login, loading, isAuthenticated }) => {
     setActivated(true);
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   if (activated && !loading)
     return <Navigate to='/' />;
-  
+
   return (
     <Layout>
       <div className="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -83,15 +89,18 @@ const Login = ({ login, loading, isAuthenticated }) => {
                 >
                   Contraseña
                 </label>
-                <div className="mt-1">
+                <div className="mt-1 relative">
                   <input
                     name="password"
                     value={password}
                     onChange={(e) => onChange(e)}
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     required
                     className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
+                  <button type="button" onClick={togglePasswordVisibility} className="ml-2 text-xl absolute right-3 top-1/2 -translate-y-1/2">
+                    {showPassword ? <VscEyeClosed /> : <VscEye />}
+                  </button>
                 </div>
               </div>
 

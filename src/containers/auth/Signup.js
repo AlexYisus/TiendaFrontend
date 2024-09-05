@@ -3,8 +3,10 @@ import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { signup } from "../../redux/actions/auth";
 import { Link } from "react-router-dom";
+import { VscEye, VscEyeClosed  } from "react-icons/vsc";
 
 function Signup({ signup }) {
+  const [showPassword, setShowPassword] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -29,6 +31,10 @@ function Signup({ signup }) {
     console.log("formData:", first_name, last_name, email, password, re_password);
     signup(first_name, last_name, email, password, re_password);
     setAccountCreated(true);
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -124,15 +130,18 @@ function Signup({ signup }) {
                 >
                   Contraseña
                 </label>
-                <div className="mt-1">
+                <div className="mt-1 relative">
                   <input
                     name="password"
                     value={password}
                     onChange={(e) => onChange(e)}
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     required
                     className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
+                  <button type="button" onClick={togglePasswordVisibility} className="ml-2 text-xl absolute right-3 top-1/2 -translate-y-1/2">
+                    {showPassword ? <VscEyeClosed /> : <VscEye />}
+                  </button>
                 </div>
               </div>
 
@@ -143,15 +152,18 @@ function Signup({ signup }) {
                 >
                   Repite la Contraseña
                 </label>
-                <div className="mt-1">
+                <div className="mt-1 relative">
                   <input
                     name="re_password"
                     value={re_password}
                     onChange={(e) => onChange(e)}
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     required
                     className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
+                  <button type="button" onClick={togglePasswordVisibility} className="ml-2 text-xl absolute right-3 top-1/2 -translate-y-1/2">
+                    {showPassword ? <VscEyeClosed /> : <VscEye />}
+                  </button>
                 </div>
               </div>
 

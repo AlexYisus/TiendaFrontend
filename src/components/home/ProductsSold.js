@@ -1,55 +1,53 @@
 import { Link } from "react-router-dom"
-const products = [
-    {
-      id: 1,
-      name: 'Black Basic Tee',
-      price: '$32',
-      href: '#',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-03-favorite-01.jpg',
-      imageAlt: "Model wearing women's black cotton crewneck tee.",
-    },
-    // More products...
-  ]
-  
-  export default function ProductsSold({data}) {
-    return (
-      <div className="bg-white">
-        <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-          <div className="sm:flex sm:items-baseline sm:justify-between">
-            <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">Los mas vendidos</h2>
-           
-          </div>
-  
-          <div className="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-3 sm:gap-y-0 sm:gap-x-6 lg:gap-x-8">
-            {data && 
+import { PiSpinner } from "react-icons/pi";
+import { FiShoppingCart } from "react-icons/fi";
+
+export default function ProductsSold({
+  data
+}) {
+  return (
+    <div className="bg-white w-screen">
+      <div className="w-full mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 flex flex-col justify-center items-center">
+        <h2 className="text-[30px] font-bold tracking-tight text-gray-900">Lo mas vendido</h2>
+
+        <div className="mt-12 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 relative">
+          {data ?
             data !== null &&
             data !== undefined &&
             data.map((product) => (
-              <div key={product.id} className="group relative">
-                <div className="w-full h-96 rounded-lg overflow-hidden group-hover:opacity-75 sm:h-auto sm:aspect-w-2 sm:aspect-h-3">
+              <div key={product.id} className="group relative border border-black/10 overflow-hidden rounded-lg hover:shadow-md duration-300">
+                <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden group-hover:opacity-75 duration-300 lg:h-80 lg:aspect-none">
                   <img
-                    src={process.env.REACT_APP_API_URL+product.photo}
+                    src={process.env.REACT_APP_API_URL + product.get_thumbnail}
                     alt=""
-                    className="w-full h-full object-center object-cover"
+                    className="w-full h-full object-center object-cover lg:w-full lg:h-full group-hover:scale-105 duration-300"
                   />
                 </div>
-                <h3 className="mt-4 text-base font-semibold text-gray-900">
-                  <Link to={`/product/${product.id}`}>
-                    <span className="absolute inset-0" />
-                    {product.name}
-                  </Link>
-                </h3>
-                <p className="mt-1 text-sm text-gray-500">${product.price}</p>
+                <div className="px-4 py-6 flex flex-col justify-center items-start border-t border-black/10 ">
+                  <div>
+                    <h3 className="text-lg text-black font-semibold">
+                      <Link to={`product/${product.id}`}>
+                        <span aria-hidden="true" className="absolute inset-0" />
+                        {product.name}
+                      </Link>
+                    </h3>
+                  </div>
+                  <p className="text-xl font-bold text-[#ca8a04]">${product.price}</p>
+                  <button className="mt-4 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white bg-gray-800 group-hover:bg-gray-700 duration-300 w-full"><FiShoppingCart className="mr-2" /> Añadir al carrito</button>
+                </div>
               </div>
-            ))}
-          </div>
-  
-          <div className="mt-6 sm:hidden">
-            <Link to="#" className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">
-              Ver mas productos<span aria-hidden="true"> &rarr;</span>
-            </Link>
-          </div>
+            )) : (
+              <>
+                <div className="absolute overflow-hidden left-1/2 -translate-x-1/2 top-0 text-black">
+                  <PiSpinner className="text-2xl animate-spin" />
+                </div>
+              </>
+            )
+          }
         </div>
+
+        <Link to="/shop" className="mt-12 bg-black text-white py-4 px-12 rounded-full hover:bg-gray-600 duration-300">Ver más</Link>
       </div>
-    )
-  }
+    </div>
+  )
+}

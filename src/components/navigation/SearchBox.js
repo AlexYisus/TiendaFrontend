@@ -1,62 +1,54 @@
-import {SearchIcon } from '@heroicons/react/solid'
-
+import { SearchIcon } from '@heroicons/react/solid'
 
 const SearchBox = ({
-    categories,
-    search,
-    onChange,
-    onSubmit,
-})=>{
-    return(
-            <form onSubmit={e => onSubmit(e)} className="text-base font-medium text-gray-500 hover:text-gray-900">
-              <div>
-                <div className="mt-1 flex rounded-md shadow-sm border border-gray-200">
-                  
-                <div className="mt-1 mx-1 px-2 py-1">
-                    <select
-                        onChange={e => onChange(e)}
-                        name='category_id'
-                        className='rounded-full'
-                    >
-                        <option value={0}>All</option>
-                        {
-                            categories && 
-                            categories !== null &&
-                            categories !== undefined &&
-                            categories.map((category, index) => (
-                                <option key={index} value={category.id}>
-                                    {category.name}
-                                </option>
-                            ))
-                        }
+  categories,
+  search,
+  onChange,
+  onSubmit,
+}) => {
+  return (
+    <div>
+      <form onSubmit={e => onSubmit(e)} className="search-box">
+        <div className='flex justify-center items-center search-input'>
+          <div className="h-full ">
+            <select
+              onChange={e => onChange(e)}
+              name='category_id'
+              className='h-full bg-[#f3f4f6] rounded-md text-base px-2 mr-2'
+            >
+              <option value={0}>Todo</option>
+              {
+                categories &&
+                categories !== null &&
+                categories !== undefined &&
+                categories.map((category, index) => (
+                  <option key={index} value={category.id}>
+                    {category.name}
+                  </option>
+                ))
+              }
 
-                    </select>
-                </div>
+            </select>
+          </div>
 
-                  <div className="relative flex items-stretch flex-grow focus-within:z-10">
-                    <input
-                        type="search"
-                        name="search"
-                        onChange={e => onChange(e)}
-                        value={search}
-                        required
-                        className="focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-l-md pl-2 sm:text-sm border-gray-300"
-                        placeholder="Que buscas hoy?"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium rounded-r-md text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
-                  >
-                    <SearchIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
-                    
-                  </button>
-
-                </div>
-              </div>
-            </form>
-    )
+          <div className="relative flex items-stretch flex-grow focus-within:z-10 h-full">
+            <input
+              type="search"
+              name="search"
+              onChange={e => onChange(e)}
+              value={search}
+              required
+              className="focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-md px-4 text-base bg-[#f3f4f6] h-full search-box placeholder:text-gray-500"
+              placeholder="¿Qué buscas hoy?"
+            />
+          </div>
+        </div>
+        <button type="submit" className="search-btn">
+          <SearchIcon className="h-7 w-7 text-black" aria-hidden="true" />
+        </button>
+      </form>
+    </div>
+  )
 }
 
 export default SearchBox
