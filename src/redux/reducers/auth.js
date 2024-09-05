@@ -17,7 +17,8 @@ import {
     RESET_PASSWORD_FAIL,
     RESET_PASSWORD_CONFIRM_SUCCESS,
     RESET_PASSWORD_CONFIRM_FAIL,
-    LOGOUT
+    LOGOUT,
+    RESET_LOGIN_FAIL
 } from '../actions/types'
 
 const initialState = {
@@ -25,13 +26,17 @@ const initialState = {
     refresh: localStorage.getItem('refresh'),
     isAuthenticated: null,
     user: null,
-    loading: false
+    loading: false,
+    loginFail: false,  // Inicialmente en false
+    error: ""
 }
 
 export default function Auth(state = initialState, action) {
     const { type, payload } = action;
+    // console.log("payload:", payload)
+    // console.log("type:", type)
 
-    switch(type) {
+    switch (type) {
         case SET_AUTH_LOADING:
             return {
                 ...state,
@@ -71,10 +76,13 @@ export default function Auth(state = initialState, action) {
             localStorage.setItem('refresh', payload.refresh);
             return {
                 ...state,
+                loginFail: false, // Cambiar a false en el éxito del login
                 isAuthenticated: true,
-                access: localStorage.getItem('access'),
-                refresh: localStorage.getItem('refresh')
-            }
+                access: payload.access,
+                refresh: payload.refresh,
+                user: payload.user || null, // Asegúrate de que el usuario también se cargue correctamente
+                loading: false
+            };
 
         case ACTIVATION_SUCCESS:
         case ACTIVATION_FAIL:
@@ -82,7 +90,7 @@ export default function Auth(state = initialState, action) {
         case RESET_PASSWORD_FAIL:
         case RESET_PASSWORD_CONFIRM_SUCCESS:
         case RESET_PASSWORD_CONFIRM_FAIL:
-            return{
+            return {
                 ...state
             }
 
@@ -93,19 +101,29 @@ export default function Auth(state = initialState, action) {
                 access: localStorage.getItem('access')
             }
         case SIGNUP_SUCCESS:
+            return {
+                error: payload?.data || 'Registro exitoso',
+            }
         case SIGNUP_FAIL:
-        case LOGIN_FAIL:
         case REFRESH_FAIL:
+        case LOGIN_FAIL:
         case LOGOUT:
             localStorage.removeItem('access')
             localStorage.removeItem('refresh')
             return {
                 ...state,
-                access :null,
-                refresh:null,
+                error: payload?.response?.data || 'Error al iniciar sesión',
+                loginFail: true,
+                access: null,
+                refresh: null,
                 isAuthenticated: false,
                 user: null,
             }
+        case RESET_LOGIN_FAIL:
+            return {
+                ...state,
+                loginFail: false,
+            };
         default:
             return state
     }

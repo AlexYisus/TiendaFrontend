@@ -188,9 +188,9 @@ function Example({
 
   return (
 
-    <section className="w-full h-screen py-12 md:py-24 lg:py-32 xl:py-48 bg-cover bg-center relative">
+    <section className="w-full flex justify-center items-center h-screen py-12 md:py-24 lg:py-32 xl:py-48 bg-cover bg-center relative">
       <img src={bg_tools} alt="Banner" className="absolute inset-0 object-cover w-full h-full brightness-50 -z-10" />
-      <div className="container px-4 md:px-6">
+      <div className="container flex justify-center items-center px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
 
           <div className="flex flex-col justify-center items-center">

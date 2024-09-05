@@ -15,6 +15,7 @@ import {
   get_total,
   get_item_total
 } from "../../redux/actions/cart";
+import { PiSpinner } from "react-icons/pi"
 
 
 
@@ -34,14 +35,18 @@ const ProductDetail = ({
   const navigate = useNavigate();
 
   const addToCart = async () => {
-    if (product && product !== null && product !== undefined && product.quantity > 0) {
-      setLoading(true)
-      await add_item(product);
-      await get_items();
-      await get_total();
-      await get_item_total();
-      setLoading(false)
-      navigate('/cart')
+    try {
+      if (product && product !== null && product !== undefined && product.quantity > 0) {
+        setLoading(true)
+        await add_item(product);
+        await get_items();
+        await get_total();
+        await get_item_total();
+        setLoading(false)
+        navigate('/cart')
+      }
+    } catch (error) {
+      console.log(error)
     }
   };
 
@@ -101,9 +106,9 @@ const ProductDetail = ({
                   <div className="mt-10 flex sm:flex-col1">
                     {loading ? <button
 
-                      className="max-w-xs flex-1 bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full"
+                      className="max-w-xs flex-1 bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full" disabled
                     >
-                      Añadir al carrito
+                      <PiSpinner className="text-2xl animate-spin" />
                     </button> : <button
                       onClick={addToCart}
                       className="max-w-xs flex-1 bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full"

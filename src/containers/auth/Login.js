@@ -3,15 +3,15 @@ import { useState, useEffect } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { login } from "../../redux/actions/auth";
-import { useNavigate } from "react-router-dom";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
+import { PiSpinner } from "react-icons/pi";
+import { toast } from "sonner";
 
-const Login = ({ login, loading, isAuthenticated }) => {
+const Login = ({ login, loading, isAuthenticated, loginFail, user, access, refresh, error }) => {
   const [showPassword, setShowPassword] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -24,10 +24,25 @@ const Login = ({ login, loading, isAuthenticated }) => {
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    login(email, password);
-    setActivated(true);
+  const onSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const res = await login(email, password);
+      if (res?.detail === 'No active account found with the given credentials') {
+        setActivated(false);
+        toast.error("Las credenciales son incorrectas, intenta nuevamente. 😔");
+      } else if (res?.detail) {
+        setActivated(false);
+        toast.error("Ha ocurrido un error, intenta nuevamente. 😔");
+      } else {
+        toast.success("Inicio de sesión exitoso. 😊");
+        setActivated(true);
+      }
+
+    } catch (error) {
+      console.log(error);
+      toast.error("Error al iniciar sesión, intenta nuevamente. 😔");
+    }
   };
 
   const togglePasswordVisibility = () => {
@@ -129,7 +144,9 @@ const Login = ({ login, loading, isAuthenticated }) => {
 
               <div>
                 {loading ? (
-                  <button className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"></button>
+                  <button className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-not-allowed" disabled>
+                    <PiSpinner className="text-2xl animate-spin" />
+                  </button>
                 ) : (
                   <button
                     type="submit"
@@ -149,6 +166,11 @@ const Login = ({ login, loading, isAuthenticated }) => {
 const mapStateToProps = (state) => ({
   loading: state.Auth.loading,
   isAuthenticated: state.Auth.isAuthenticated,
+  loginFail: state.Auth.loginFail,
+  user: state.Auth.user,
+  access: state.Auth.access,
+  refresh: state.Auth.refresh,
+  error: state.Auth.error,
 });
 
 export default connect(mapStateToProps, {

@@ -3,9 +3,11 @@ import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { signup } from "../../redux/actions/auth";
 import { Link } from "react-router-dom";
-import { VscEye, VscEyeClosed  } from "react-icons/vsc";
+import { VscEye, VscEyeClosed } from "react-icons/vsc";
+import { PiSpinner } from "react-icons/pi";
+import { toast } from 'sonner'
 
-function Signup({ signup }) {
+function Signup({ signup, loading, loginFail, error }) {
   const [showPassword, setShowPassword] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -26,11 +28,25 @@ function Signup({ signup }) {
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    console.log("formData:", first_name, last_name, email, password, re_password);
-    signup(first_name, last_name, email, password, re_password);
-    setAccountCreated(true);
+  const onSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      // console.log("formData:", first_name, last_name, email, password, re_password);
+      const res = await signup(first_name, last_name, email, password, re_password);
+      if (res?.email === "user account with this email already exists.") {
+        setAccountCreated(false);
+        toast.error("Las credenciales ya existen, intenta nuevamente. 😔");
+      } else if (res?.email) {
+        toast.success("Ocurrió un error, intenta nuevamente. 😔");
+        setAccountCreated(false);
+      } else {
+        toast.success("Cuenta creada exitosamente, revisa tu correo electronico para activar tu cuenta. 😊");
+        setAccountCreated(true);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Error al crear la cuenta, intenta nuevamente. 😔");
+    }
   };
 
   const togglePasswordVisibility = () => {
@@ -191,12 +207,18 @@ function Signup({ signup }) {
               </div>
 
               <div>
-                <button
-                  type="submit"
-                  className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                  Registrar
-                </button>
+                {loading ? (
+                  <button className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-not-allowed" disabled>
+                    <PiSpinner className="text-2xl animate-spin" />
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  >
+                    Registrar
+                  </button>
+                )}
               </div>
             </form>
           </div>
@@ -205,7 +227,11 @@ function Signup({ signup }) {
     </Layout>
   );
 }
-const mapStateToProp = (state) => ({});
+const mapStateToProp = (state) => ({
+  loading: state.Auth.loading,
+  error: state.Auth.error,
+  loginFail: state.Auth.loginFail,
+});
 
 export default connect(mapStateToProp, {
   signup,
