@@ -124,8 +124,8 @@ export default function Footer() {
             <h1 className="text-md font-semibold mb-4 text-white flex justify-start items-center gap-x-2"><FaRegPaperPlane />
               Contáctanos</h1>
             <ul className="space-y-3">
-              <li><a href="mailto:example@correo.com" className="hover:text-gray-600 duration-300">example@correo.com</a></li>
-              <li><a href="tel:+593987654321" className="hover:text-gray-600 duration-300">+ 593 987 6543 21</a></li>
+              <li><a href="mailto:alextaraguay20@gmail.com" className="hover:text-gray-600 duration-300">alextaraguay20@gmail.com</a></li>
+              <li><a href="tel:+593987654321" className="hover:text-gray-600 duration-300">+ 593 992 953 397</a></li>
               <li className="uppercase">Latacunga 050102 - Ecuador</li>
             </ul>
           </div>
@@ -142,7 +142,7 @@ export default function Footer() {
             <h1 className="text-md font-semibold mb-4 text-white flex justify-start items-center gap-x-2"><MdOutlineElectricBolt />
               ElectroFerretería</h1>
             <p>
-              Tu socio confiable en proyectos de construcción y mejoras del hogar desde 1985.
+              Av. Napo 4-44 y Juan Abel Echeverría
             </p>
           </div>
         </div>
