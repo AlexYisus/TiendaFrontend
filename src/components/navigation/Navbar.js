@@ -3,6 +3,7 @@ import { Menu, Popover, Transition } from '@headlessui/react'
 import { NavLink, Link } from 'react-router-dom'
 import { Navigate } from 'react-router'
 import { IoBagOutline } from "react-icons/io5";
+import LogoP from "../../assets/img/LogoPrin.png";
 
 import {
   // BookmarkAltIcon,
@@ -222,7 +223,7 @@ function Navbar({
               <span className="sr-only">Workflow</span>
               <img
                 className="h-8 w-auto sm:h-10"
-                src="https://electroferreteria.s3.us-east-2.amazonaws.com/MARKETING+CCAJ2-14.png"
+                src={LogoP}
                 alt=""
               />
             </Link>
@@ -283,7 +284,7 @@ function Navbar({
                 <div>
                   <img
                     className="h-8 w-auto"
-                    src="https://electroferreteria.s3.us-east-2.amazonaws.com/MARKETING+CCAJ2-14.png"
+                    src="./static/media/MARKETING CCAJ2-14.png"
                     alt=""
                   />
                 </div>
