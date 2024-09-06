@@ -142,7 +142,7 @@ import { connect } from 'react-redux'
 import { logout } from '../../redux/actions/auth'
 import { get_categories } from '../../redux/actions/categories'
 import { get_search_products } from '../../redux/actions/products';
-import SearchBoxHero from "../navigation/SearchBoxHero";
+import { SearchBoxHero } from "../navigation/SearchBoxHero";
 import bg_tools from "../../assets/img/bg-tools.jpg";
 
 function Example({

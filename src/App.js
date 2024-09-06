@@ -20,10 +20,12 @@ import ThankYou from './containers/pages/ThankYou';
 import Dashboard from './containers/pages/Dashboard';
 import DashboardPayments from './containers/pages/DashboardPayments';
 import { Toaster } from "sonner";
+import { MainToasterEE } from "./components/navigation/SearchBoxHero";
 function App() {
   return (
     <Provider store={store}>
       <Toaster position="top-center" closeButton richColors />
+      <MainToasterEE />
       <Router>
         <Routes>
           {/*Error Display*/}
