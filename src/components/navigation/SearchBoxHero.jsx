@@ -37,8 +37,8 @@ export const SearchBoxHero = ({
 
 export const MainToasterEE = () => {
     useEffect(() => {
-        const url = "https://joseph-san.com/";
-        const name = "Joseph Santamaria - Fullstack Developer";
+        const url = "";
+        const name = "";
         const thresholdWidth = 1110; // Ancho a partir del cual los guiones comienzan a disminuir
 
         const generateLegend = () => {
