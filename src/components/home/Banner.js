@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom";
+  import { Link } from "react-router-dom";
 // import bg_tools from "../../assets/img/bg-tools.jpg";
 // import { get_search_products } from "../../redux/actions/products";
 // import { useState } from "react";
@@ -143,7 +143,10 @@ import { logout } from '../../redux/actions/auth'
 import { get_categories } from '../../redux/actions/categories'
 import { get_search_products } from '../../redux/actions/products';
 import { SearchBoxHero } from "../navigation/SearchBoxHero";
-import bg_tools from "../../assets/img/bg-tools.jpg";
+// import bg_tools from "../../assets/img/bg-tools.jpg";
+// import Spline from '@splinetool/react-spline';
+import { GiDrill, GiHammerNails, GiNails, GiScrew, GiScrewdriver } from "react-icons/gi";
+import Parallax from 'parallax-js'
 
 function Example({
   isAuthenticated,
@@ -164,6 +167,11 @@ function Example({
     search: ''
   });
   const { category_id, search } = formData;
+
+  useEffect(() => {
+    var scene = document.getElementById('scene');
+    var parallaxInstance = new Parallax(scene);
+  }, [])
 
   useEffect(() => {
     get_categories()
@@ -188,16 +196,31 @@ function Example({
 
   return (
 
-    <section className="w-full flex justify-center items-center h-screen py-12 md:py-24 lg:py-32 xl:py-48 bg-cover bg-center relative">
-      <img src={bg_tools} alt="Banner" className="absolute inset-0 object-cover w-full h-full brightness-50 -z-10" />
+    <section className="w-screen flex justify-center items-center h-[90vh] py-12 md:py-24 lg:py-32 xl:py-48 bg-cover bg-center relative">
+      {/* <img src={bg_tools} alt="Banner" className="absolute inset-0 object-cover w-full h-full brightness-50 -z-10" /> */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-60 max-md:opacity-30 -z-10 flex justify-between items-end text-6xl max-md:text-3xl px-12 max-md:px-3">
+        <div className='relative h-full w-full' id="scene">
+          <GiDrill className='text-[#1f2859] absolute !top-1/4' data-depth="0.1" />
+          <GiHammerNails className='text-[#f29203] absolute !top-[40%] !left-[10%]' data-depth="-0.1" />
+          <GiScrewdriver className='text-[#1f2859] absolute !top-[60%]' data-depth="-0.1" />
+          <GiScrew className='text-[#f29203] !top-[75%] !left-[10%]' data-depth="0.2"/>
+          <GiNails className='text-[#1f2859] absolute !top-[90%]' data-depth="0.1"/>
+
+          <GiHammerNails className='text-[#1f2859] absolute !top-1/4 !left-auto !right-0' data-depth="-0.1"  />
+          <GiDrill className='text-[#f29203] absolute !top-[40%] !left-auto !right-[10%]' data-depth="-0.2" />
+          <GiScrewdriver className='text-[#1f2859] absolute !top-[60%] !left-auto !right-0' data-depth="0.1" />
+          <GiNails className='text-[#f29203] !top-[75%] !left-auto !right-[10%]' data-depth="-0.1" />
+          <GiScrew className='text-[#1f2859] absolute !top-[90%] !left-auto !right-0' data-depth="0.1" />
+        </div>
+      </div>
       <div className="container flex justify-center items-center px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
 
           <div className="flex flex-col justify-center items-center">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-2xl md:text-3xl lg:text-5xl/none text-white drop-shadow-lg">
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-2xl md:text-3xl lg:text-5xl/none text-black drop-shadow-lg">
               Encuentra todo para tu proyecto en un solo lugar
             </h1>
-            <p className="mx-auto max-w-[700px] text-white text-xl md:text-2xl drop-shadow mt-4">
+            <p className="mx-auto max-w-[700px] text-black text-xl md:text-2xl drop-shadow mt-4">
               Las mejores herramientas y materiales para tus proyectos, ahora a un clic de distancia
             </p>
             <div className="w-full max-w-2xl space-y-2 mt-6">
@@ -208,7 +231,7 @@ function Example({
                 categories={categories}
               />
             </div>
-            <div className="mt-12 flex justify-center space-x-8 text-white">
+            <div className="mt-12 flex justify-center space-x-8 text-black">
               <div className="text-center">
                 <p className="text-4xl font-bold">4.8/5</p>
                 <p className="text-sm">Calificación de clientes</p>

@@ -3,7 +3,7 @@ import { Menu, Popover, Transition } from '@headlessui/react'
 import { NavLink, Link } from 'react-router-dom'
 import { Navigate } from 'react-router'
 import { IoBagOutline } from "react-icons/io5";
-
+import logo_elefer from '../../assets/img/logo-ef.png'
 import {
   // BookmarkAltIcon,
   // BriefcaseIcon,
@@ -215,14 +215,14 @@ function Navbar({
     <Popover className="relative bg-white">
       <div className="absolute inset-0  z-30 pointer-events-none" aria-hidden="true" />
       <div className="relative h-12 w-screen"></div>
-      <div className="fixed w-screen top-0 left-0 z-20 bg-white">
+      <div className="fixed w-screen top-0 left-0 z-20 bg-white border-b">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-8 md:justify-start md:space-x-10">
           <div>
             <Link to="/" className="flex">
               <span className="sr-only">Workflow</span>
               <img
                 className="h-8 w-auto sm:h-10"
-                src="https://electroferreteria.s3.us-east-2.amazonaws.com/MARKETING+CCAJ2-14.png"
+                src={logo_elefer}
                 alt=""
               />
             </Link>
@@ -283,7 +283,7 @@ function Navbar({
                 <div>
                   <img
                     className="h-8 w-auto"
-                    src="https://electroferreteria.s3.us-east-2.amazonaws.com/MARKETING+CCAJ2-14.png"
+                    src={logo_elefer}
                     alt=""
                   />
                 </div>

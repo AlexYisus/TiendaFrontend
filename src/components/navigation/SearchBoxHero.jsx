@@ -18,7 +18,7 @@ export const SearchBoxHero = ({
                         onChange={e => onChange(e)}
                         value={search}
                         required
-                        className="focus:ring-gray-900 focus:border-gray-900 block w-full rounded-md pl-2 sm:text-sm border-gray-300 py-3"
+                        className="focus:ring-gray-300 focus:border-gray-300 block w-full rounded-md pl-2 sm:text-sm border border-gray-300 py-3"
                         placeholder="Buscar productos..."
                     />
                 </div>

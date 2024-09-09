@@ -17,6 +17,7 @@
 import { MdOutlineElectricBolt } from "react-icons/md";
 import { FaRegPaperPlane } from "react-icons/fa";
 import { FaSitemap } from "react-icons/fa6";
+import logo_elefer from '../../assets/img/logo-ef.png'
 
 const navigation = {
   solutions: [
@@ -116,7 +117,7 @@ export default function Footer() {
           <div className="bg-white h-24 w-24 rounded-full flex justify-center items-center">
             <img
               className="h-12 w-auto object-cover"
-              src="https://electroferreteria.s3.us-east-2.amazonaws.com/MARKETING+CCAJ2-14.png"
+              src={logo_elefer}
               alt=""
             />
           </div>

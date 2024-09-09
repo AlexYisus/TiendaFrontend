@@ -20,12 +20,29 @@ import ThankYou from './containers/pages/ThankYou';
 import Dashboard from './containers/pages/Dashboard';
 import DashboardPayments from './containers/pages/DashboardPayments';
 import { Toaster } from "sonner";
-import { MainToasterEE } from "./components/navigation/SearchBoxHero";
+import { useEffect } from "react";
+import Lenis from 'lenis'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
+gsap.registerPlugin(ScrollTrigger)
+
 function App() {
+  useEffect(() => {
+    const lenis = new Lenis()
+
+    lenis.on('scroll', () => { })
+
+    lenis.on('scroll', ScrollTrigger.update)
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000)
+    })
+
+    gsap.ticker.lagSmoothing(0)
+  })
   return (
     <Provider store={store}>
       <Toaster position="top-center" closeButton richColors />
-      <MainToasterEE />
       <Router>
         <Routes>
           {/*Error Display*/}
