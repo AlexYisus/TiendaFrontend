@@ -221,7 +221,7 @@ if (made_payment)
         <div className="mt-12 lg:grid lg:grid-cols-12 lg:gap-x-12 lg:items-start xl:gap-x-16">
           <section aria-labelledby="cart-heading" className="lg:col-span-7">
             <h2 id="cart-heading" className="sr-only">
-              Items in your shopping cart
+              Productos en su carrito de compras
             </h2>
             
             <ul className="border-t border-b border-gray-200 divide-y divide-gray-200">

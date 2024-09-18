@@ -73,7 +73,7 @@ const ShippingForm = ({
 
             <form onSubmit={e => buy(e)}>
                 <div className=" px-4 py-5  mt-4 sm:px-6">
-                <h3 className="text-lg leading-6 font-medium text-gray-900">Shipping Address:</h3>
+                <h3 className="text-lg leading-6 font-medium text-gray-900">Información del cliente</h3>
                 </div>
                 
                 <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-gray-200 sm:pt-5">
