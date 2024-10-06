@@ -123,7 +123,7 @@ const CartItem = ({
                                 </button> : <button
                                     onClick={removeItemHandler}
                                     className="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500">
-                                    <span className="sr-only">Remove</span>
+                                    <span className="sr-only">Eliminar</span>
                                     
                                 </button>}
 
