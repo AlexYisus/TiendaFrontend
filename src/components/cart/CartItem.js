@@ -124,7 +124,7 @@ const CartItem = ({
                                     onClick={removeItemHandler}
                                     className="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500">
                                     <span className="sr-only">Remove</span>
-                                    <XIcon className="h-5 w-5" aria-hidden="true" />
+                                    
                                 </button>}
 
                         </div>
