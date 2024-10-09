@@ -233,16 +233,15 @@ function Example({
             </div>
             <div className="mt-12 flex justify-center space-x-8 text-black">
               <div className="text-center">
-                <p className="text-4xl font-bold">4.8/5</p>
-                <p className="text-sm">Calificación de clientes</p>
+              <p className="text-4xl font-bold">Calidad</p>
+              <p className="text-sm">En cada producto</p>
               </div>
               <div className="text-center">
-                <p className="text-4xl font-bold">24h</p>
-                <p className="text-sm">Entrega rápida</p>
+                
               </div>
               <div className="text-center">
-                <p className="text-4xl font-bold">100%</p>
-                <p className="text-sm">Garantía de satisfacción</p>
+                <p className="text-4xl font-bold">Garantía</p>
+                <p className="text-sm">100% Asegurada</p>
               </div>
             </div>
           </div>
