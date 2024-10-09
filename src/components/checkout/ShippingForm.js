@@ -42,7 +42,7 @@ const ShippingForm = ({
                 <dt className="flex items-center text-sm text-gray-600">
                   <span>Tiempo estimado</span>
                   <a href="#" className="ml-2 flex-shrink-0 text-gray-400 hover:text-gray-500">
-                    <span className="sr-only">Learn more about how shipping is calculated</span>
+                
                     <QuestionMarkCircleIcon className="h-5 w-5" aria-hidden="true" />
                   </a>
                 </dt>
@@ -53,7 +53,7 @@ const ShippingForm = ({
                 <dt className="flex text-sm text-gray-600">
                   <span>IVA</span>
                   <a href="#" className="ml-2 flex-shrink-0 text-gray-400 hover:text-gray-500">
-                    <span className="sr-only">Learn more about how tax is calculated</span>
+                    
                     <QuestionMarkCircleIcon className="h-5 w-5" aria-hidden="true" />
                   </a>
                 </dt>

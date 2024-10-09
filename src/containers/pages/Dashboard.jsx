@@ -187,7 +187,7 @@ const Dashboard =({
       <div className="mt-5 border-t border-gray-200">
         <dl className="divide-y divide-gray-200">
           <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-            <dt className="text-sm font-medium text-gray-500">Full name</dt>
+            <dt className="text-sm font-medium text-gray-500">Nombre Completo</dt>
             <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
               <span className="flex-grow">{user?.first_name} {user?.last_name}</span>
             </dd>
@@ -195,7 +195,7 @@ const Dashboard =({
 
           
           <div className="py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4">
-            <dt className="text-sm font-medium text-gray-500">Email address</dt>
+            <dt className="text-sm font-medium text-gray-500">Correo Electronico</dt>
             <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
               <span className="flex-grow">{user?.email}</span>
               

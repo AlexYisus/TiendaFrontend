@@ -381,9 +381,9 @@ const Shop = ({
                                     onChange={e => onChange(e)}
                                     value={sortBy}
                                   >
-                                    <option value='date_created'>Fecha</option>
+                                   
                                     <option value='price'>Precio</option>
-                                    <option value='sold'>Sold</option>
+                                    <option value='sold'>Más Populares</option>
                                     <option value='title'>Nombre</option>
 
                                   </select>
@@ -589,9 +589,9 @@ const Shop = ({
                                   onChange={e => onChange(e)}
                                   value={sortBy}
                                 >
-                                  <option value='date_created'>Fecha</option>
+                                
                                   <option value='price'>Precio</option>
-                                  <option value='sold'>Más Vendidos</option>
+                                  <option value='sold'>Más Pupulares</option>
                                   <option value='title'>Nombre</option>
 
                                 </select>
