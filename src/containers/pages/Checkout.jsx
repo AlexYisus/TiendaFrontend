@@ -24,7 +24,6 @@ import ShippingForm from '../../components/checkout/ShippingForm'
 const Checkout = ({
   isAuthenticated, 
   items, 
-  update_item, 
   remove_item,
   get_shipping_options,
   shipping,
@@ -125,7 +124,6 @@ const buy = async e => {
                             <CartItem 
                                 item={item}
                                 count={count}
-                                update_item={update_item}
                                 remove_item={remove_item}
                                 render={render}
                                 setRender={setRender}
