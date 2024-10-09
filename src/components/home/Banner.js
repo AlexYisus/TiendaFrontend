@@ -218,7 +218,7 @@ function Example({
 
           <div className="flex flex-col justify-center items-center">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-2xl md:text-3xl lg:text-5xl/none text-black drop-shadow-lg">
-              Encuentra todo para tu proyecto en un solo lugar
+              Bienvenido a ElectroFerretería CCAJ tu tienda de confianza
             </h1>
             <p className="mx-auto max-w-[700px] text-black text-xl md:text-2xl drop-shadow mt-4">
               Las mejores herramientas y materiales para tus proyectos, ahora a un clic de distancia
