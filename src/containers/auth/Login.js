@@ -97,7 +97,7 @@ const Login = ({ login, loading, isAuthenticated, loginFail, user, access, refre
                       value={email}
                       onChange={(e) => onChange(e)}
                       type="email"
-                      placeholder="Ej:, johndoe@example.com"
+                      placeholder="Ej:, Cristiam@gmail.com"
                       required
                       className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
@@ -117,7 +117,7 @@ const Login = ({ login, loading, isAuthenticated, loginFail, user, access, refre
                       value={password}
                       onChange={(e) => onChange(e)}
                       type={showPassword ? "text" : "password"}
-                      placeholder="xxxExamplePassword123"
+                      placeholder="contraseña123"
                       required
                       className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />

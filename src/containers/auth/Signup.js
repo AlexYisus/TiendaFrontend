@@ -100,7 +100,7 @@ function Signup({ signup, loading, loginFail, error }) {
                         value={first_name}
                         onChange={(e) => onChange(e)}
                         type="text"
-                        placeholder="John"
+                        placeholder="Jesús"
                         required
                         className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       />
@@ -120,7 +120,7 @@ function Signup({ signup, loading, loginFail, error }) {
                         value={last_name}
                         onChange={(e) => onChange(e)}
                         type="text"
-                        placeholder="Doe"
+                        placeholder="Chicaiza"
                         required
                         className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       />
@@ -141,7 +141,7 @@ function Signup({ signup, loading, loginFail, error }) {
                       value={email}
                       onChange={(e) => onChange(e)}
                       type="email"
-                      placeholder="Ej:, johndoe@example.com"
+                      placeholder="Ej:, Jesus@gmail.com"
                       required
                       className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
@@ -212,7 +212,7 @@ function Signup({ signup, loading, loginFail, error }) {
                       href="#"
                       className="font-medium text-indigo-600 hover:text-indigo-500"
                     >
-                      ¿Has olvidado tu contraseña?
+                     
                     </a>
                   </div>
                 </div>
