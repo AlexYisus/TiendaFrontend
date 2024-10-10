@@ -302,7 +302,7 @@ const Shop = ({
                     <>
                     <h3 className="-mx-2 -my-3 flow-root">
                       <Disclosure.Button className="px-2 py-3 bg-white w-full flex items-center justify-between text-gray-400 hover:text-gray-500">
-                        <span className="font-sofiapro-regular text-gray-900">Prices</span>
+                        <span className="font-sofiapro-regular text-gray-900">Precios</span>
                         <span className="ml-6 flex items-center">
                           {open ? (
                             <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
@@ -381,9 +381,9 @@ const Shop = ({
                                     onChange={e => onChange(e)}
                                     value={sortBy}
                                 >
-                                  <option value='date_created'>Fecha</option>
+                                  
                                   <option value='price'>Precio</option>
-                                  <option value='sold'>Sold</option>
+                                  <option value='sold'>Más Populares</option>
                                   <option value='title'>Nombre</option>
 
                                 </select>
@@ -508,7 +508,7 @@ const Shop = ({
                     <>
                     <h3 className="-mx-2 -my-3 flow-root">
                       <Disclosure.Button className="px-2 py-3 bg-white w-full flex items-center justify-between text-gray-400 hover:text-gray-500">
-                        <span className="font-sofiapro-regular text-gray-900">Prices</span>
+                        <span className="font-sofiapro-regular text-gray-900">Precios</span>
                         <span className="ml-6 flex items-center">
                           {open ? (
                             <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
@@ -587,9 +587,8 @@ const Shop = ({
                                     onChange={e => onChange(e)}
                                     value={sortBy}
                                 >
-                                  <option value='date_created'>Fecha</option>
                                   <option value='price'>Precio</option>
-                                  <option value='sold'>Sold</option>
+                                  <option value='sold'>Más populares</option>
                                   <option value='title'>Nombre</option>
 
                                 </select>
