@@ -111,7 +111,7 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#111111] w-full pt-16 pb-8 px-12 max-md:px-6" aria-labelledby="footer-heading">
+    <footer className="bg-[#005eff] w-full pt-16 pb-8 px-12 max-md:px-6" aria-labelledby="footer-heading">
       <div className="w-full flex flex-col justify-center items-center">
         <div className="w-full flex justify-between items-start gap-x-6 max-md:flex-col max-md:gap-y-12">
           <div className="bg-white h-24 w-24 rounded-full flex justify-center items-center">
@@ -121,7 +121,7 @@ export default function Footer() {
               alt=""
             />
           </div>
-          <div className="text-gray-400">
+          <div className="text-black-400">
             <h1 className="text-md font-semibold mb-4 text-white flex justify-start items-center gap-x-2"><FaRegPaperPlane />
               Contáctanos</h1>
             <ul className="space-y-3">
@@ -130,7 +130,7 @@ export default function Footer() {
               <li className="uppercase">Latacunga 050102 - Ecuador</li>
             </ul>
           </div>
-          <div className="text-gray-400">
+          <div className="text-black-400">
             <h1 className="text-md font-semibold mb-4 text-white flex justify-start items-center gap-x-2"><FaSitemap />
               Páginas</h1>
             <ul className="space-y-3">
@@ -139,7 +139,7 @@ export default function Footer() {
               <li className="hover:text-gray-600 duration-300"><a href="/cart">Carrito</a></li>
             </ul>
           </div>
-          <div className="text-gray-400 max-w-xs">
+          <div className="text-black-400 max-w-xs">
             <h1 className="text-md font-semibold mb-4 text-white flex justify-start items-center gap-x-2"><MdOutlineElectricBolt />
               ElectroFerretería</h1>
             <p>
@@ -147,8 +147,8 @@ export default function Footer() {
             </p>
           </div>
         </div>
-        <div className="mt-16 max-md:mt-12 border-t border-gray-400 pt-8 md:flex md:items-center md:justify-center w-full">
-          <p className="text-base text-gray-400 md:mt-0 md:border-1 text-center">
+        <div className="mt-16 max-md:mt-12 border-t border-black-400 pt-8 md:flex md:items-center md:justify-center w-full">
+          <p className="text-base text-black-400 md:mt-0 md:border-1 text-center">
             &copy; 2024 ElectroFerretería.
           </p>
         </div>

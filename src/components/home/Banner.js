@@ -217,20 +217,19 @@ function Example({
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
 
           <div className="flex flex-col justify-center items-center">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-2xl md:text-3xl lg:text-5xl/none text-black drop-shadow-lg">
-              Bienvenido a ElectroFerretería CCAJ tu tienda de confianza
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-2xl md:text-3xl lg:text-5xl/none text-[#005eff] drop-shadow-lg">
+              Bienvenido a ElectroFerretería CCAJ
             </h1>
-            <p className="mx-auto max-w-[700px] text-black text-xl md:text-2xl drop-shadow mt-4">
-              Las mejores herramientas y materiales para tus proyectos, ahora a un clic de distancia
+            <p className="mx-auto max-w-[700px] text-black text-xl md:text-4xl drop-shadow mt-4">
+              tu tienda de confianza
             </p>
-            <div className="w-full max-w-2xl space-y-2 mt-6">
-              <SearchBoxHero
-                search={search}
-                onChange={onChange}
-                onSubmit={onSubmit}
-                categories={categories}
-              />
-            </div>
+            <p className="mx-auto max-w-[700px] text-[#ffa100] text-xl md:text-4xl drop-shadow mt-4">
+              Las mejores herramientas y materiales
+            </p>
+            <p className="mx-auto max-w-[700px] text-black text-xl md:text-2xl drop-shadow mt-4">
+              ahora a un clic de distancia
+            </p>
+            
             <div className="mt-12 flex justify-center space-x-8 text-black">
               <div className="text-center">
               <p className="text-4xl font-bold">Calidad</p>
@@ -242,7 +241,15 @@ function Example({
               <div className="text-center">
                 <p className="text-4xl font-bold">Garantía</p>
                 <p className="text-sm">100% Asegurada</p>
-              </div>
+              </div>   
+            </div>
+            <div className="w-full max-w-2xl space-y-2 mt-6">
+              <SearchBoxHero
+                search={search}
+                onChange={onChange}
+                onSubmit={onSubmit}
+                categories={categories}
+              />
             </div>
           </div>
         </div>
