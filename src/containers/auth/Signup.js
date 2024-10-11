@@ -61,11 +61,7 @@ function Signup({ signup, loading, loginFail, error }) {
 
         <div className="min-h-full w-[50vw] max-md:w-[90vw] flex flex-col justify-center py-4 px-4 sm:px-6 lg:px-16">
           <div className="sm:w-full sm:max-w-md">
-            {/* <img
-              className="mx-auto h-12 w-auto md:hidden bg-gray-200 rounded-md"
-              src="https://electroferreteria.s3.us-east-2.amazonaws.com/MARKETING+CCAJ2-14.png"
-              alt=""
-            /> */}
+            {}
             <h2 className="mt-6 max-md:mt-3 text-left text-4xl font-extrabold text-gray-900">
               Registrate
             </h2>
@@ -195,17 +191,7 @@ function Signup({ signup, loading, loginFail, error }) {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  {/*<div className="flex items-center">
-                    <input
-                      id="remember-me"
-                      name="remember-me"
-                      type="checkbox"
-                      className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                    />
-                    <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                      Recuerdame
-                    </label>
-                    </div>*/}
+                  {}
 
                   <div className="text-sm">
                     <a
