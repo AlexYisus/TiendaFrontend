@@ -184,20 +184,20 @@ const Search = ({
             >
               <div className="ml-auto relative max-w-xs w-full h-full bg-white shadow-xl py-4 pb-12 flex flex-col overflow-y-auto">
                 <div className="px-4 flex items-center justify-between">
-                  <h2 className="text-lg font-medium text-gray-900">Filters</h2>
+                  <h2 className="text-lg font-medium text-gray-900">Filtros</h2>
                   <button
                     type="button"
                     className="-mr-2 w-10 h-10 bg-white p-2 rounded-md flex items-center justify-center text-gray-400"
                     onClick={() => setMobileFiltersOpen(false)}
                   >
-                    <span className="sr-only">Close menu</span>
+                    <span className="sr-only">Cerrar menú</span>
                     <XIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                 </div>
 
                 {/* MOBILE FILTERS */}
                 <form onSubmit={e => onSubmit(e)} className="mt-4 border-t border-gray-200">
-                  <h3 className="sr-only">Categories</h3>
+                  <h3 className="sr-only">Categorias</h3>
                   <ul role="list" className="font-medium text-gray-900 px-2 py-3">
                     {
                         categories &&
@@ -264,7 +264,7 @@ const Search = ({
                     <>
                     <h3 className="-mx-2 -my-3 flow-root">
                       <Disclosure.Button className="px-2 py-3 bg-white w-full flex items-center justify-between text-gray-400 hover:text-gray-500">
-                        <span className="font-sofiapro-regular text-gray-900">Prices</span>
+                        <span className="font-sofiapro-regular text-gray-900">Precios</span>
                         <span className="ml-6 flex items-center">
                           {open ? (
                             <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
@@ -322,7 +322,7 @@ const Search = ({
                     <>
                     <h3 className="-mx-2 -my-3 flow-root">
                       <Disclosure.Button className="px-2 py-3 bg-white w-full flex items-center justify-between text-gray-400 hover:text-gray-500">
-                        <span className="font-sofiapro-regular text-gray-900">Mas Filtros</span>
+                        <span className="font-sofiapro-regular text-gray-900">Más Filtros</span>
                         <span className="ml-6 flex items-center">
                           {open ? (
                             <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
@@ -343,9 +343,8 @@ const Search = ({
                                     onChange={e => onChange(e)}
                                     value={sortBy}
                                 >
-                                  <option value='date_created'>Fecha</option>
                                   <option value='price'>Precio</option>
-                                  <option value='sold'>Sold</option>
+                                  <option value='sold'>Más popular</option>
                                   <option value='title'>Nombre</option>
 
                                 </select>
@@ -474,7 +473,7 @@ const Search = ({
                     <>
                     <h3 className="-mx-2 -my-3 flow-root">
                       <Disclosure.Button className="px-2 py-3 bg-white w-full flex items-center justify-between text-gray-400 hover:text-gray-500">
-                        <span className="font-sofiapro-regular text-gray-900">Prices</span>
+                        <span className="font-sofiapro-regular text-gray-900">Precios</span>
                         <span className="ml-6 flex items-center">
                           {open ? (
                             <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
@@ -532,7 +531,7 @@ const Search = ({
                     <>
                     <h3 className="-mx-2 -my-3 flow-root">
                       <Disclosure.Button className="px-2 py-3 bg-white w-full flex items-center justify-between text-gray-400 hover:text-gray-500">
-                        <span className="font-sofiapro-regular text-gray-900">Mas Filtros</span>
+                        <span className="font-sofiapro-regular text-gray-900">Más Filtros</span>
                         <span className="ml-6 flex items-center">
                           {open ? (
                             <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
@@ -553,9 +552,9 @@ const Search = ({
                                     onChange={e => onChange(e)}
                                     value={sortBy}
                                 >
-                                  <option value='date_created'>Fecha</option>
+                       
                                   <option value='price'>Precio</option>
-                                  <option value='sold'>Sold</option>
+                                  <option value='sold'>Más Populares</option>
                                   <option value='title'>Nombre</option>
 
                                 </select>

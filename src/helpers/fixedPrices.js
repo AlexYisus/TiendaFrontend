@@ -1,7 +1,7 @@
 export const prices = [
     {
         id: 0,
-        name: 'Any'
+        name: 'Todos los precios'
     },
     {
         id: 1,
@@ -21,6 +21,6 @@ export const prices = [
     },
     {
         id: 5,
-        name: 'More than 80'
+        name: '80 o más'
     }
 ]
