@@ -1,6 +1,6 @@
 import Layout from '../../hocs/Layout'
 import { useState, useEffect } from 'react'
-
+import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
 import { reset_password_confirm } from '../../redux/actions/auth'
 import {Navigate, useParams} from 'react-router'
@@ -11,19 +11,10 @@ const ResetPasswordConfirm = ({
   const params = useParams()
 
   const [requestSent, setRequestSent] = useState(false);
-  const [csrfToken, setCsrfToken] = useState('');
+  
 
   useEffect(() => {
-    
-    const fetchCsrfToken = async () => {
-      try {
-        const response = await fetch('/api/csrf-token'); 
-        const data = await response.json();
-        setCsrfToken(data.csrfToken);
-      } catch (error) {
-        
-      }
-    };
+
 
     fetchCsrfToken(); 
   }, []);
