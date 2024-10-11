@@ -11,13 +11,10 @@ const ResetPasswordConfirm = ({
   const params = useParams()
 
   const [requestSent, setRequestSent] = useState(false);
-  
 
   useEffect(() => {
-
-
-    fetchCsrfToken(); 
-  }, []);
+    window.scrollTo(0,0)
+  }, [])
 
   const [formData, setFormData] = useState({
     new_password: '',
