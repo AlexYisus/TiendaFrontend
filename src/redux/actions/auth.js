@@ -383,7 +383,7 @@ export const reset_password_confirm = (uid, token, new_password, re_new_password
       dispatch({
           type: REMOVE_AUTH_LOADING
       });
-      dispatch(setAlert('Passwords do not match', 'red'));
+      
   } else {
       try {
           const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/users/reset_password_confirm/`, body, config);
@@ -395,7 +395,7 @@ export const reset_password_confirm = (uid, token, new_password, re_new_password
               dispatch({
                   type: REMOVE_AUTH_LOADING
               });
-              dispatch(setAlert('Password has been reset successfully', 'green'));
+              
           } else {
               dispatch({
                   type: RESET_PASSWORD_CONFIRM_FAIL
@@ -403,7 +403,7 @@ export const reset_password_confirm = (uid, token, new_password, re_new_password
               dispatch({
                   type: REMOVE_AUTH_LOADING
               });
-              dispatch(setAlert('Error resetting your password', 'red'));
+              
           }
       } catch(err){
           dispatch({
@@ -412,7 +412,7 @@ export const reset_password_confirm = (uid, token, new_password, re_new_password
           dispatch({
               type: REMOVE_AUTH_LOADING
           });
-          dispatch(setAlert('Error resetting your password', 'red'));
+          
       }
   }
 }

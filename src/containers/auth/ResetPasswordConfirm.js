@@ -13,8 +13,19 @@ const ResetPasswordConfirm = ({
   const [requestSent, setRequestSent] = useState(false);
 
   useEffect(() => {
-    window.scrollTo(0,0)
-  }, [])
+    
+    const fetchCsrfToken = async () => {
+      try {
+        const response = await fetch('/api/csrf-token'); 
+        const data = await response.json();
+        setCsrfToken(data.csrfToken);
+      } catch (error) {
+        
+      }
+    };
+
+    fetchCsrfToken(); 
+  }, []);
 
   const [formData, setFormData] = useState({
     new_password: '',
