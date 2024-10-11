@@ -11,7 +11,8 @@ const ResetPasswordConfirm = ({
   const params = useParams()
 
   const [requestSent, setRequestSent] = useState(false);
-
+  const [csrfToken, setCsrfToken] = useState('');
+  
   useEffect(() => {
     
     const fetchCsrfToken = async () => {
