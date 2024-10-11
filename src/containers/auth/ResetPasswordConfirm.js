@@ -48,7 +48,7 @@ const ResetPasswordConfirm = ({
           <img
             className="mx-auto h-12 w-auto"
             src=""
-            alt="Workflow"
+            alt=""
           />
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Ingresa tu nueva contraseña</h2>
           
