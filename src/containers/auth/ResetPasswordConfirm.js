@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
 import { reset_password_confirm } from '../../redux/actions/auth'
+
 import {Navigate, useParams} from 'react-router'
+
 const ResetPasswordConfirm = ({
   reset_password_confirm,
   loading
@@ -47,10 +49,10 @@ const ResetPasswordConfirm = ({
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img
             className="mx-auto h-12 w-auto"
-            src="https://electroferreteria.s3.us-east-2.amazonaws.com/MARKETING+CCAJ2-14.png"
-            alt=""
+            src=""
+            alt="Workflow"
           />
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Escribe tu nueva contraseña</h2>
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Set your new password</h2>
           
         </div>
 
@@ -59,7 +61,7 @@ const ResetPasswordConfirm = ({
             <form onSubmit={e=>onSubmit(e)} className="space-y-6">
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Contraseña
+                  Password
                 </label>
                 <div className="mt-1">
                   <input
@@ -75,7 +77,7 @@ const ResetPasswordConfirm = ({
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Repetir Contraseña
+                  Repeat Password
                 </label>
                 <div className="mt-1">
                   <input
@@ -95,12 +97,13 @@ const ResetPasswordConfirm = ({
                 <button
                 className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
+             
               </button>:
               <button
               type="submit"
               className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Cambiar Contraseña
+              Reset password
             </button>}
               </div>
             </form>
