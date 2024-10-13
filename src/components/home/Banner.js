@@ -6,8 +6,6 @@ import { logout } from '../../redux/actions/auth';
 import { get_categories } from '../../redux/actions/categories';
 import { get_search_products } from '../../redux/actions/products';
 import { SearchBoxHero } from "../navigation/SearchBoxHero";
-import { Carousel } from 'react-responsive-carousel'; // Importa el carrusel
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Importa los estilos del carrusel
 import { GiDrill, GiHammerNails, GiNails, GiScrew, GiScrewdriver } from "react-icons/gi";
 import Parallax from 'parallax-js';
 

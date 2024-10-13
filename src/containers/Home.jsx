@@ -11,6 +11,7 @@ import ProductsArrival from "../components/home/ProductsArrival";
 import ProductsSold from "../components/home/ProductsSold";
 import { useNavigate } from "react-router-dom";
 import Logos from "../components/home/Logos";
+import jslider from "../components/home/jslider";
 
 
 const Home = ({
@@ -19,6 +20,7 @@ const Home = ({
     products_arrival,
     products_sold,
     isAuthenticated
+
 }) => {
 
     const navigate = useNavigate();
@@ -32,6 +34,7 @@ const Home = ({
         <Layout>
             <div className="text-blue-500">
                 <Banner />
+                <jslider />
                 <ProductsArrival data={products_arrival} />
                 <ProductsSold data={products_sold} />
                 <Logos />
