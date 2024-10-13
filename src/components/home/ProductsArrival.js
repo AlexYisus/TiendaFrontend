@@ -13,6 +13,7 @@ export default function ProductsArrival({
   return (
     <div className="bg-white w-screen pt-12">
       <div className="w-full mx-auto pt-16 px-4 lg:max-w-7xl lg:px-8 flex flex-col justify-center items-center">
+      <h2 className="text-[30px] font-bold tracking-tight text-gray-900">Lo más popular</h2>
       <div className="w-full max-w-2xl mt-8">
               <Carousel showThumbs={false} autoPlay infiniteLoop>
                 <div>
@@ -27,7 +28,7 @@ export default function ProductsArrival({
               </Carousel>
             </div>
             
-        <h2 className="text-[30px] font-bold tracking-tight text-gray-900">Lo mas reciente</h2>
+        <h2 className="text-[30px] font-bold tracking-tight text-gray-900">Lo más reciente</h2>
 
         <div className="mt-12 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 relative">
           {data ?
