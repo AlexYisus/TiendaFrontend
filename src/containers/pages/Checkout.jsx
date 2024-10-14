@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 import CartItem from '../../components/cart/CartItem'
 import { CheckIcon, ClockIcon, QuestionMarkCircleIcon, XIcon } from "@heroicons/react/outline";
-import { update_item, remove_item } from '../../redux/actions/cart'
+import { remove_item } from '../../redux/actions/cart'
 import { useEffect, useState } from 'react'
 import {get_shipping_options} from '../../redux/actions/shipping'
 import Shipping from "../../redux/reducers/shipping";
@@ -274,7 +274,6 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps,{
-  update_item,
   remove_item,
   get_shipping_options,
   get_shipping_options,
