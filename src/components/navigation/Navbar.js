@@ -212,7 +212,7 @@ function Navbar({
               <div className="flex items-center justify-between">
                 <div>
                   <img
-                    className="h-8 w-auto"
+                    className="w-full flex items-center h-12 w-auto"
                     src={logo_elefer}
                     alt=""
                   />
