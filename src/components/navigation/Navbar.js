@@ -5,22 +5,9 @@ import { Navigate } from 'react-router'
 import { IoBagOutline } from "react-icons/io5";
 import logo_elefer from '../../assets/img/logo-ef.png'
 import {
-  // BookmarkAltIcon,
-  // BriefcaseIcon,
-  // ChartBarIcon,
-  // CheckCircleIcon,
-  // CursorClickIcon,
-  // DesktopComputerIcon,
-  // GlobeAltIcon,
-  // InformationCircleIcon,
+
   MenuIcon,
-  // NewspaperIcon,
-  // OfficeBuildingIcon,
-  // PhoneIcon,
-  // PlayIcon,
-  // ShieldCheckIcon,
-  // UserGroupIcon,
-  // ViewGridIcon,
+
   XIcon,
 } from '@heroicons/react/outline'
 import { connect } from 'react-redux'
@@ -29,63 +16,6 @@ import { get_categories } from '../../redux/actions/categories'
 import { get_search_products } from '../../redux/actions/products';
 import SearchBox from './SearchBox'
 
-// const solutions = [
-//   {
-//     name: 'Analytics',
-//     description: 'Get a better understanding of where your traffic is coming from.',
-//     href: '#',
-//     icon: ChartBarIcon,
-//   },
-//   {
-//     name: 'Engagement',
-//     description: 'Speak directly to your customers in a more meaningful way.',
-//     href: '#',
-//     icon: CursorClickIcon,
-//   },
-//   { name: 'Security', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
-//   {
-//     name: 'Integrations',
-//     description: "Connect with third-party tools that you're already using.",
-//     href: '#',
-//     icon: ViewGridIcon,
-//   },
-// ]
-// const callsToAction = [
-//   { name: 'Watch Demo', href: '#', icon: PlayIcon },
-//   { name: 'View All Products', href: '#', icon: CheckCircleIcon },
-//   { name: 'Contact Sales', href: '#', icon: PhoneIcon },
-// ]
-// const company = [
-//   { name: 'About', href: '#', icon: InformationCircleIcon },
-//   { name: 'Customers', href: '#', icon: OfficeBuildingIcon },
-//   { name: 'Press', href: '#', icon: NewspaperIcon },
-//   { name: 'Careers', href: '#', icon: BriefcaseIcon },
-//   { name: 'Privacy', href: '#', icon: ShieldCheckIcon },
-// ]
-// const resources = [
-//   { name: 'Community', href: '#', icon: UserGroupIcon },
-//   { name: 'Partners', href: '#', icon: GlobeAltIcon },
-//   { name: 'Guides', href: '#', icon: BookmarkAltIcon },
-//   { name: 'Webinars', href: '#', icon: DesktopComputerIcon },
-// ]
-// const blogPosts = [
-//   {
-//     id: 1,
-//     name: 'Boost your conversion rate',
-//     href: '#',
-//     preview: 'Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.',
-//     imageUrl:
-//       'https://images.unsplash.com/photo-1558478551-1a378f63328e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2849&q=80',
-//   },
-//   {
-//     id: 2,
-//     name: 'How to use search engine optimization to drive traffic to your site',
-//     href: '#',
-//     preview: 'Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.',
-//     imageUrl:
-//       'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80',
-//   },
-// ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -198,12 +128,12 @@ function Navbar({
 
   const guestLinks = (
     <Fragment>
-      <Link to="/login" className="text-base font-medium text-gray-500 hover:text-gray-900 ml-4">
+      <Link to="/login" className="ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-white hover:bg-[#005eff]">
         Iniciar Sesión
       </Link>
       <Link
         to="/signup"
-        className="ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#005eff] hover:bg-[#005eff]"
+        className="ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-white hover:bg-[#005eff]"
       >
         Registrarse
       </Link>
@@ -215,13 +145,13 @@ function Navbar({
     <Popover className="relative bg-white">
       <div className="absolute inset-0  z-30 pointer-events-none" aria-hidden="true" />
       <div className="relative h-12 w-screen"></div>
-      <div className="fixed w-screen top-0 left-0 z-20 bg-white border-b">
+      <div className="fixed w-screen top-0 left-0 z-20 bg-[#005eff] border-b">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-8 md:justify-start md:space-x-10">
           <div>
             <Link to="/" className="flex">
               <span className="sr-only">Workflow</span>
               <img
-                className="h-8 w-auto sm:h-10"
+                className="h-8 w-auto sm:h-10 ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-white"
                 src={logo_elefer}
                 alt=""
               />

@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
-import { useEffect, useState } from 'react';
-import { Navigate } from 'react-router';
-import { connect } from 'react-redux';
-import { logout } from '../../redux/actions/auth';
-import { get_categories } from '../../redux/actions/categories';
+  import { Link } from "react-router-dom";
+
+import { useEffect, useState } from 'react'
+import { Navigate } from 'react-router'
+
+import { connect } from 'react-redux'
+import { logout } from '../../redux/actions/auth'
+import { get_categories } from '../../redux/actions/categories'
 import { get_search_products } from '../../redux/actions/products';
 import { SearchBoxHero } from "../navigation/SearchBoxHero";
+
 import { GiDrill, GiHammerNails, GiNails, GiScrew, GiScrewdriver } from "react-icons/gi";
-import Parallax from 'parallax-js';
+import Parallax from 'parallax-js'
 
 function Example({
   isAuthenticated,
@@ -20,6 +23,7 @@ function Example({
 }) {
 
   const [redirect, setRedirect] = useState(false);
+
   const [render, setRender] = useState(false);
   const [formData, setFormData] = useState({
     category_id: 0,
@@ -30,11 +34,11 @@ function Example({
   useEffect(() => {
     var scene = document.getElementById('scene');
     var parallaxInstance = new Parallax(scene);
-  }, []);
+  }, [])
 
   useEffect(() => {
-    get_categories();
-  }, [get_categories]);
+    get_categories()
+  }, [get_categories])
 
   const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -42,18 +46,19 @@ function Example({
     e.preventDefault();
     get_search_products(search, category_id);
     setRender(!render);
-  };
+  }
 
   if (render) {
     return <Navigate to='/search' />;
   }
 
   if (redirect) {
-    window.location.reload(false);
+    window.location.reload(false)
     return <Navigate to='/' />;
   }
 
   return (
+
     <section className="w-screen flex justify-center items-center h-[90vh] py-12 md:py-24 lg:py-32 xl:py-48 bg-cover bg-center relative">
       {}
       <div className="absolute top-0 left-0 w-full h-full opacity-60 max-md:opacity-30 -z-10 flex justify-between items-end text-6xl max-md:text-3xl px-12 max-md:px-3">
@@ -63,6 +68,7 @@ function Example({
           <GiScrewdriver className='text-[#1f2859] absolute !top-[60%]' data-depth="-0.1" />
           <GiScrew className='text-[#f29203] !top-[75%] !left-[10%]' data-depth="0.2"/>
           <GiNails className='text-[#1f2859] absolute !top-[90%]' data-depth="0.1"/>
+
           <GiHammerNails className='text-[#1f2859] absolute !top-1/4 !left-auto !right-0' data-depth="-0.1"  />
           <GiDrill className='text-[#f29203] absolute !top-[40%] !left-auto !right-[10%]' data-depth="-0.2" />
           <GiScrewdriver className='text-[#1f2859] absolute !top-[60%] !left-auto !right-0' data-depth="0.1" />
@@ -89,16 +95,17 @@ function Example({
             
             <div className="mt-12 flex justify-center space-x-8 text-black">
               <div className="text-center">
-                <p className="text-4xl font-bold">Calidad</p>
-                <p className="text-sm">En cada producto</p>
+              <p className="text-4xl font-bold">Calidad</p>
+              <p className="text-sm">En cada producto</p>
               </div>
-              <div className="text-center"></div>
+              <div className="text-center">
+                
+              </div>
               <div className="text-center">
                 <p className="text-4xl font-bold">Garantía</p>
                 <p className="text-sm">100% Asegurada</p>
-              </div>
+              </div>   
             </div>
-
             <div className="w-full max-w-2xl space-y-2 mt-6">
               <SearchBoxHero
                 search={search}
@@ -107,13 +114,12 @@ function Example({
                 categories={categories}
               />
             </div>
-
           </div>
         </div>
-      </div> 
+      </div>
     </section>
-    
-  );
+
+  )
 }
 
 const mapStateToProps = state => ({
@@ -121,10 +127,10 @@ const mapStateToProps = state => ({
   user: state.Auth.user,
   categories: state.Categories.categories,
   total_items: state.Cart.total_items
-});
+})
 
 export default connect(mapStateToProps, {
   logout,
   get_categories,
   get_search_products
-})(Example);
+})(Example)
