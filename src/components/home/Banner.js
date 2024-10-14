@@ -86,10 +86,10 @@ function Example({
             <p className="mx-auto max-w-[700px] text-black text-xl md:text-4xl drop-shadow mt-4">
               tu tienda de confianza
             </p>
-            <p className="mx-auto max-w-[700px] text-[#ffa100] text-xl md:text-4xl drop-shadow mt-4">
+            <p className="text-4xl font-bold tracking-tighter sm:text-2xl md:text-3xl lg:text-5xl/none text-[#ffa100] drop-shadow-lg">
               Las mejores herramientas y materiales
             </p>
-            <p className="mx-auto max-w-[700px] text-black text-xl md:text-2xl drop-shadow mt-4">
+            <p className="mx-auto max-w-[700px] text-black text-xl md:text-4xl drop-shadow mt-4">
               ahora a un clic de distancia
             </p>
             
