@@ -230,19 +230,31 @@ function Navbar({
             <div className="py-6 px-5">
 
               <div className="mt-6">
+                
                 {isAuthenticated ? <Link
                   to="/dashboard"
-                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#005eff] hover:bg-[#005eff]"
                 >
                   Iniciar Sesión
                 </Link> :
                   <a
                     href="/signup"
-                    className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                    className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#005eff] hover:bg-[#005eff]"
                   >
                     Registrarse
                   </a>}
 
+                  <div className="flex items-center md:ml-12">
+              {window.location.pathname === '/search' ? <></> : <SearchBox
+                search={search}
+                onChange={onChange}
+                onSubmit={onSubmit}
+                categories={categories}
+              />}
+              {
+                isAuthenticated ? authLinks : guestLinks
+              }
+            </div>
 
                 <p className="mt-6 text-center text-base font-medium text-gray-500">
                   Ya tienes cuenta?{' '}
