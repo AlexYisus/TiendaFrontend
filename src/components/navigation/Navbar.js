@@ -233,7 +233,7 @@ function Navbar({
                 
               <a className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#005eff] hover:bg-[#005eff]">
                     Menú de opciones</a>
-              <div className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-white hover:bg-white">
+              <div className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-white hover:bg-white">
               {window.location.pathname === '/search' ? <></> : <SearchBox
                 search={search}
                 onChange={onChange}
