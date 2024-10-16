@@ -81,7 +81,7 @@ function Example({
 
           <div className="flex flex-col justify-center items-center">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-2xl md:text-3xl lg:text-5xl/none text-[#005eff] drop-shadow-lg">
-              Bienvenido a ElectroFerretería CCAJ
+              Bienvenido a ElectroFerretería
             </h1>
             <p className="mx-auto max-w-[700px] text-black text-xl md:text-3xl drop-shadow mt-4">
               tu tienda de confianza
