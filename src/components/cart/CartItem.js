@@ -111,7 +111,7 @@ const CartItem = ({
                             <button
                                 type="submit"
                                 className="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500">
-                                <span className="mx-2">Update</span>
+                                <span className="mx-2">Actualizar cantidad</span>
                             </button>
                         </form>
 
@@ -140,13 +140,13 @@ const CartItem = ({
                             (
                                 <>
                                     <CheckIcon className="flex-shrink-0 h-5 w-5 text-green-500" aria-hidden="true" />
-                                    <span>In Stock</span>
+                                    <span>En Stock</span>
                                 </>
                             )
                             : (
                                 <>
                                     <ClockIcon className="flex-shrink-0 h-5 w-5 text-gray-300" aria-hidden="true" />
-                                    <span>Out of Stock</span>
+                                    <span>Fuera de Stock</span>
                                 </>
                             )}
                 </p>

@@ -87,7 +87,8 @@ export const process_payment = (
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization': `JWT ${localStorage.getItem('access')}`
+            'Authorization': `JWT ${localStorage.getItem('access')}`,
+            'Authorization': `Bearer ${localStorage.getItem('access')}`
         }
     };
 

@@ -13,12 +13,14 @@ import { useNavigate } from "react-router-dom";
 import Logos from "../components/home/Logos";
 
 
+
 const Home = ({
     get_products_by_arrival,
     get_products_by_sold,
     products_arrival,
     products_sold,
     isAuthenticated
+
 }) => {
 
     const navigate = useNavigate();

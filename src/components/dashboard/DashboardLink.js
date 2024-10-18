@@ -32,7 +32,7 @@ const DashboardLink =()=>{
                 )}
                 aria-hidden="true"
             />
-            Dashboard
+            Perfil de Usuario
             </Link>
             
             <Link
@@ -47,7 +47,7 @@ const DashboardLink =()=>{
                 )}
                 aria-hidden="true"
             />
-            Payment History
+            Historial de Pago
             </Link>
             
         </>

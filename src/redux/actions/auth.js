@@ -358,65 +358,64 @@ export const reset_password = (email) => async (dispatch) => {
   }
 };
 
-export const reset_password_confirm =
-  (uid, token, new_password, re_new_password) => async (dispatch) => {
-    dispatch({
-      type: SET_AUTH_LOADING,
-    });
+export const reset_password_confirm = (uid, token, new_password, re_new_password) => async dispatch => {
+  dispatch({
+      type: SET_AUTH_LOADING
+  });
 
-    const config = {
+  const config = {
       headers: {
-        "Content-Type": "application/json",
-      },
-    };
+          'Content-Type': 'application/json'
+      }
+  };
 
-    const body = JSON.stringify({
+  const body = JSON.stringify({
       uid,
       token,
       new_password,
-      re_new_password,
-    });
+      re_new_password
+  });
 
-    if (new_password !== re_new_password) {
+  if (new_password !== re_new_password) {
       dispatch({
-        type: RESET_PASSWORD_CONFIRM_FAIL,
+          type: RESET_PASSWORD_CONFIRM_FAIL
       });
       dispatch({
-        type: REMOVE_AUTH_LOADING,
+          type: REMOVE_AUTH_LOADING
       });
-    } else {
+      
+  } else {
       try {
-        const res = await axios.post(
-          `${process.env.REACT_APP_API_URL}/auth/users/reset_password_confirm/`,
-          body,
-          config
-        );
-
-        if (res.status === 204) {
+          const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/users/reset_password_confirm/`, body, config);
+      
+          if (res.status === 204) {
+              dispatch({
+                  type: RESET_PASSWORD_CONFIRM_SUCCESS
+              });
+              dispatch({
+                  type: REMOVE_AUTH_LOADING
+              });
+              
+          } else {
+              dispatch({
+                  type: RESET_PASSWORD_CONFIRM_FAIL
+              });
+              dispatch({
+                  type: REMOVE_AUTH_LOADING
+              });
+              
+          }
+      } catch(err){
           dispatch({
-            type: RESET_PASSWORD_CONFIRM_SUCCESS,
+              type: RESET_PASSWORD_CONFIRM_FAIL
           });
           dispatch({
-            type: REMOVE_AUTH_LOADING,
+              type: REMOVE_AUTH_LOADING
           });
-        } else {
-          dispatch({
-            type: RESET_PASSWORD_CONFIRM_FAIL,
-          });
-          dispatch({
-            type: REMOVE_AUTH_LOADING,
-          });
-        }
-      } catch (err) {
-        dispatch({
-          type: RESET_PASSWORD_CONFIRM_FAIL,
-        });
-        dispatch({
-          type: REMOVE_AUTH_LOADING,
-        });
+          
       }
-    }
-  };
+  }
+}
 
 export const logout = () => (dispatch) => {
   dispatch({

@@ -40,23 +40,34 @@ const Activate = ({
 
   return (
     <Layout>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
-          {loading ?
-            <button
-              className="inline-flex mt-12 items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-              Loading...
-            </button> :
-            <button
-              onClick={activate_account}
-              className="inline-flex mt-12 items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-              Activatr Cuenta
-            </button>
-          }
+ <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div className="max-w-3xl mx-auto">
+    <div className="bg-white shadow-md rounded-lg p-6">
+      {loading ? (
+        <div className="mt-12 flex justify-center">
+          <button
+            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            Loading...
+          </button>
         </div>
-      </div>
+      ) : (
+        
+        <div className="mt-12 flex justify-center">
+           <h1 className="text-4xl font-bold tracking-tighter sm:text-2xl md:text-3xl lg:text-5xl/none text-[#005eff] drop-shadow-lg">
+              Activa tu cuenta con el siguiente botón
+            </h1>
+          <button
+            onClick={activate_account}
+            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-[#005eff] hover:bg-[#005eff] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#005eff]"
+          >
+            Activar Cuenta
+          </button>
+        </div>
+      )}
+    </div>
+  </div>
+</div>
     </Layout>
   )
 }

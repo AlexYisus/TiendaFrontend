@@ -80,12 +80,12 @@ const ShippingForm = ({
 
             <form onSubmit={e => buy(e)}>
                 <div className=" px-4 py-5  mt-4 sm:px-6">
-                    <h3 className="text-lg leading-6 font-medium text-gray-900">Shipping Address:</h3>
+                <h3 className="text-lg leading-6 font-medium text-gray-900">Información del cliente</h3>
                 </div>
 
                 <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-gray-200 sm:pt-5">
                     <label htmlFor="username" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                        Full name
+                        Nombre completo
                     </label>
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                         <div className="max-w-lg flex rounded-md shadow-sm">
@@ -105,7 +105,7 @@ const ShippingForm = ({
 
                 <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-gray-200 sm:pt-5">
                     <label htmlFor="username" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                        Address Line 1*
+                        Calle principal
                     </label>
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                         <div className="max-w-lg flex rounded-md shadow-sm">
@@ -124,7 +124,7 @@ const ShippingForm = ({
 
                 <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-gray-200 sm:pt-5">
                     <label htmlFor="username" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                        Address Line 2
+                        Calle secundaria
                     </label>
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                         <div className="max-w-lg flex rounded-md shadow-sm">
@@ -142,7 +142,7 @@ const ShippingForm = ({
 
                 <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-gray-200 sm:pt-5">
                     <label htmlFor="username" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                        City*
+                        Ciudad
                     </label>
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                         <div className="max-w-lg flex rounded-md shadow-sm">
@@ -161,7 +161,7 @@ const ShippingForm = ({
 
                 <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-gray-200 sm:pt-5">
                     <label htmlFor="username" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                        State/Province/Region*
+                        Provincia/Catón
                     </label>
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                         <div className="max-w-lg flex rounded-md shadow-sm">
@@ -180,7 +180,7 @@ const ShippingForm = ({
 
                 <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-gray-200 sm:pt-5">
                     <label htmlFor="username" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                        Postal Code*
+                        Código postal
                     </label>
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                         <div className="max-w-lg flex rounded-md shadow-sm">
@@ -199,7 +199,7 @@ const ShippingForm = ({
 
                 <div className="">
                     <label htmlFor="username" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                        Country/Region*
+                        País
                     </label>
                     <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-gray-200 sm:pt-5">
                         <div className=" sm:col-span-2">
