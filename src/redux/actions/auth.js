@@ -279,7 +279,7 @@ export const refresh = () => async (dispatch) => {
       refresh: localStorage.getItem("refresh"),
     });
 
-    console.log("Refresh token:", body);
+    // console.log("Refresh token:", body);
 
     try {
       const res = await axios.post(
@@ -287,7 +287,7 @@ export const refresh = () => async (dispatch) => {
         body,
         config
       );
-      console.log("Response Refresh token:", res.data);
+      // console.log("Response Refresh token:", res.data);
 
       if (res.status === 200) {
         dispatch({
