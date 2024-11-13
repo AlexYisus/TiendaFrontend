@@ -33,7 +33,7 @@ export default function ProductsSold({
                       </Link>
                     </h3>
                   </div>
-                  <p className="text-xl font-bold text-[#ca8a04]">${/*product.price*/}</p>
+                  <p className="text-xl font-bold text-[#ca8a04]">${product.price}</p>
                   <button className="mt-4 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white bg-gray-800 group-hover:bg-gray-700 duration-300 w-full"><FiShoppingCart className="mr-2" /> Añadir al carrito</button>
                 </div>
               </div>

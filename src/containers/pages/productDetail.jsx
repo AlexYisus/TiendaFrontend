@@ -72,7 +72,7 @@ const ProductDetail = ({
 
               <div className="mt-3">
                 <h2 className="sr-only">información del producto</h2>
-                <p className="text-3xl text-gray-900">{/*product && product.price*/}</p>
+                <p className="text-3xl text-gray-900">{product && product.price}</p>
               </div>
               <div className="mt-6">
                 <h3 className="sr-only">Descripciónn</h3>
