@@ -4,10 +4,11 @@ import truper from "../../assets/img/logos/truper.webp";
 import qsb from "../../assets/img/logos/qsb.png";
 import norton from "../../assets/img/logos/norton.svg";
 import fandeli from "../../assets/img/logos/fandeli.png";
-
+import fv from "../../assets/img/logos/fv.png"
+import veto from "../../assets/img/logos/veto.png"
 
 export default function Logos() {
-    const logos = [dewalt, stanley, truper, qsb, norton, fandeli]; // Aquí puedes agregar más imágenes
+    const logos = [fv, stanley, veto, qsb, norton, fandeli]; // Aquí puedes agregar más imágenes
 
     return (
         <div className="w-screen flex flex-col justify-center items-center mb-12">
