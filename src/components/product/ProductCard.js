@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
             </Link>
           </h3>
         </div>
-        <p className="text-sm font-medium text-gray-700">${product.price}</p>
+        <p className="text-sm font-medium text-gray-700">${}</p>
         <button className="mt-4 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white bg-gray-800 group-hover:bg-gray-700 duration-300"><FiShoppingCart className="mr-2" /> Añadir al carrito</button>
       </div>
     </div>
