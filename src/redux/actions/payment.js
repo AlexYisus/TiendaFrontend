@@ -95,7 +95,6 @@ export const process_payment = (
     const body = JSON.stringify({
         nonce,
         shipping_id,
-        coupon_name,
         full_name,
         address_line_1,
         address_line_2,
@@ -103,6 +102,7 @@ export const process_payment = (
         state_province_region,
         postal_zip_code,
         country_region,
+        coupon_name,
         telephone_number
     });
 
