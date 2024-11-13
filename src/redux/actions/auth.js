@@ -68,17 +68,17 @@ export const check_authenticated = () => async (dispatch) => {
 
 export const signup = (first_name, last_name, email, password, re_password) => async (dispatch) => {
   dispatch({
-    type: SET_AUTH_LOADING,
+    type: SET_AUTH_LOADING, //Se usa para señalar que la acción esta en curso
   });
   const config = {
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json",//cabezeras
       Authorization: `Bearer ${token}`,
     },
     withCredentials: true, // Opcional, solo si necesitas enviar cookies
   };
 
-  const body = JSON.stringify({
+  const body = JSON.stringify({//datos a enviar del formulario
     first_name,
     last_name,
     email,
@@ -87,20 +87,20 @@ export const signup = (first_name, last_name, email, password, re_password) => a
   });
 
   try {
-    const res = await axios.post(
+    const res = await axios.post(//axios envia datos al endpoint
       `${process.env.REACT_APP_API_URL}/auth/users/`,
       body,
       config
     );
 
-    if (res.status === 201) {
+    if (res.status === 201) {//respuesta correcta
       dispatch({
         type: SIGNUP_SUCCESS,
         payload: res.data,
       });
     } else {
       dispatch({
-        type: SIGNUP_FAIL,
+        type: SIGNUP_FAIL,//elimina el estado de carga
       });
     }
     dispatch({

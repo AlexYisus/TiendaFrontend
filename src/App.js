@@ -15,10 +15,10 @@ import Shop from "./containers/Shop";
 import ProductDetail from "./containers/pages/productDetail";
 import Search from './containers/pages/Search';
 import Cart from './containers/pages/Cart';
-import Checkout from './containers/pages/Checkout';
-import ThankYou from './containers/pages/ThankYou';
+//import Checkout from './containers/pages/Checkout';
+//import ThankYou from './containers/pages/ThankYou';
 import Dashboard from './containers/pages/Dashboard';
-import DashboardPayments from './containers/pages/DashboardPayments';
+//import DashboardPayments from './containers/pages/DashboardPayments';
 import { Toaster } from "sonner";
 import { useEffect } from "react";
 import Lenis from 'lenis'

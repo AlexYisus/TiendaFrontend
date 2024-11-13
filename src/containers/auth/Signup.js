@@ -16,7 +16,7 @@ function Signup({ signup, loading, loginFail, error }) {
 
   const [accountCreated, setAccountCreated] = useState(false);
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({//controla los datos
     first_name: "",
     last_name: "",
     email: "",
@@ -29,7 +29,7 @@ function Signup({ signup, loading, loginFail, error }) {
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onSubmit = async (e) => {
+  const onSubmit = async (e) => {//cuando se registra muestra un mensaje
     try {
       e.preventDefault();
       // console.log("formData:", first_name, last_name, email, password, re_password);
