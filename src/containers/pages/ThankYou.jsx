@@ -21,10 +21,13 @@ const ThankYou = ({
             <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
                 <div className="text-center">
                 <p className="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
-                    ¡Gracias!
+                    ¡ Visitanos en nuestro Local con tu carrito de compras !
                 </p>
                 <p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
-                    Gracias por comprar en nuestra tienda 
+                    Presenta tus productos seleccionados en nuestro local con una captura de pantalla 
+                </p>
+                <p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
+                    Estamos trabajando para mejorar tu experiencia
                 </p>
                 </div>
             </div>
