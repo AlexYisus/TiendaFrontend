@@ -40,5 +40,5 @@ const mapStateToProps =state => ({
 })
 
 export default connect(mapStateToProps,{
-    reset
+    reset 
 }) (ThankYou)*/}
