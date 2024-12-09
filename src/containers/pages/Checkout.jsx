@@ -1,4 +1,4 @@
-import Layout from "../../hocs/Layout";
+{/*import Layout from "../../hocs/Layout";
 import { Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 import CartItem from '../../components/cart/CartItem'
@@ -243,7 +243,7 @@ const Checkout = ({
               </ul>
             </section>
 
-            {/* Order summary */}
+            {/* Order summary 
             <ShippingForm
               full_name={full_name}
               address_line_1={address_line_1}
@@ -298,4 +298,4 @@ export default connect(mapStateToProps, {
   get_payment_total,
   get_client_token,
   process_payment,
-})(Checkout)
+})(Checkout)*/}
