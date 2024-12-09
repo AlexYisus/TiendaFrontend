@@ -1,30 +1,28 @@
-import { Link } from "react-router-dom";
-import { PiSpinner } from "react-icons/pi";
-import ProductCard from "./ProductCard"; // Asegúrate de importar el componente ProductCard
-
-export default function ProductsSold({ data }) {
-  return (
-    <div className="bg-white w-screen">
-      <div className="w-full mx-auto py-16 px-4 sm:py-16 sm:px-6 lg:max-w-7xl lg:px-8 flex flex-col justify-center items-center">
-        <div className="px-12">
-          <h2 className="text-[30px] text-center font-bold tracking-tight text-gray-900">Lo más popular</h2>
-        </div>
-        <div className="mt-12 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 relative">
-          {data ? (
-            data.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))
-          ) : (
-            <div className="absolute overflow-hidden left-1/2 -translate-x-1/2 top-0 text-black">
-              <PiSpinner className="text-2xl animate-spin" />
+import { Link } from "react-router-dom"
+const ProductCard =({product})=>{
+    return(
+        
+            <div key={product.id} className="group relative mx-2">
+              <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                <img
+                  src={product.photo}
+                  alt=""
+                  className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-gray-700">
+                    <Link to={`/product/${product.id}`}>
+                      <span aria-hidden="true" className="absolute inset-0" />
+                      {product.name}
+                    </Link>
+                  </h3>
+                </div>
+                <p className="text-sm font-medium text-gray-900">${product.price}</p>
+              </div>
             </div>
-          )}
-        </div>
-
-        <Link to="/shop" className="mt-12 bg-gray-800 text-white py-4 px-12 rounded-full hover:bg-gray-600 duration-300">
-          Ver más
-        </Link>
-      </div>
-    </div>
-  );
+    )
 }
+
+export default ProductCard
