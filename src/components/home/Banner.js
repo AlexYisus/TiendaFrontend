@@ -106,14 +106,6 @@ function Example({
                 <p className="text-sm">100% Asegurada</p>
               </div>   
             </div>
-            <div className="w-full max-w-2xl space-y-2 mt-6">
-              <SearchBoxHero
-                search={search}
-                onChange={onChange}
-                onSubmit={onSubmit}
-                categories={categories}
-              />
-            </div>
           </div>
         </div>
       </div>

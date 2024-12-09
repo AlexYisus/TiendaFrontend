@@ -128,14 +128,14 @@ function Navbar({
 
   const guestLinks = (
     <Fragment>
-      <Link to="/login" className="ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-white hover:bg-[#005eff]">
-        Iniciar Sesión
+      <Link to="/" className="ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-white hover:bg-[#005eff]">
+        Inicio
       </Link>
       <Link
-        to="/signup"
+        to="/shop"
         className="ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-white hover:bg-[#005eff]"
       >
-        Registrarse
+        Catálgo
       </Link>
     </Fragment>
   )
@@ -174,19 +174,19 @@ function Navbar({
 
             </Popover.Group>
             <div className="flex items-center md:ml-12">
-              {window.location.pathname === '/search' ? <></> : <SearchBox
+              {/*{window.location.pathname === '/search' ? <></> : <SearchBox
                 search={search}
                 onChange={onChange}
                 onSubmit={onSubmit}
                 categories={categories}
-              />}
-              <NavLink to="/shop" className={window.location.pathname === '/search' ? ' text-base font-medium text-black hover:text-gray-500' : 'text-base font-medium text-black hover:text-gray-500 mr-4'}>
+              />}*/}
+              {/*<NavLink to="/shop" className={window.location.pathname === '/search' ? ' text-base font-medium text-black hover:text-gray-500' : 'text-base font-medium text-black hover:text-gray-500 mr-4'}>
                 Tienda
-              </NavLink>
-              <Link to="/cart">
+              </NavLink>*/}
+              {/*<Link to="/cart">
                 <IoBagOutline className="h-8 w-8 cursor-pointer text-black mr-4" />
                 <span className="text-xs absolute bottom-0 mb-4 ml-4 bg-red-500 text-white font-semibold rounded-full p-1 text-center h-6 w-6 flex justify-center items-center">{total_items}</span>
-              </Link>
+              </Link>*/}
               {
                 isAuthenticated ? authLinks : guestLinks
               }
