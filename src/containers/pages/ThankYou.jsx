@@ -1,4 +1,4 @@
-{/*import Layout from '../../hocs/Layout'
+import Layout from '../../hocs/Layout'
 import { connect } from 'react-redux'
 import { Navigate } from 'react-router';
 import { reset } from '../../redux/actions/payment';
@@ -41,4 +41,4 @@ const mapStateToProps =state => ({
 
 export default connect(mapStateToProps,{
     reset 
-}) (ThankYou)*/}
+}) (ThankYou)

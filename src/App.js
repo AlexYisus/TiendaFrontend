@@ -15,9 +15,10 @@ import Shop from "./containers/Shop";
 import ProductDetail from "./containers/pages/productDetail";
 import Search from './containers/pages/Search';
 import Cart from './containers/pages/Cart';
-
+import Checkout from './containers/pages/Checkout';
+import ThankYou from './containers/pages/ThankYou';
 import Dashboard from './containers/pages/Dashboard';
-
+import DashboardPayments from './containers/pages/DashboardPayments';
 import { Toaster } from "sonner";
 import { useEffect } from "react";
 import Lenis from 'lenis'
@@ -49,7 +50,7 @@ function App() {
 
           <Route exact path='/' element={<Home />} />
           <Route exact path='/cart' element={<Cart />} />
-          
+          <Route exact path='/checkout' element={<Checkout />} />
 
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/login" element={<Login />} />
@@ -61,10 +62,10 @@ function App() {
           <Route exact path="/product/:productId" element={<ProductDetail />} />
           <Route exact path='/search' element={<Search />} />
 
-          
+          <Route exact path='/thankyou' element={<ThankYou />} />
 
           <Route exact path='/dashboard' element={<Dashboard />} />
-          
+          <Route exact path='/dashboard/payments' element={<DashboardPayments />} />
 
 
         </Routes>
