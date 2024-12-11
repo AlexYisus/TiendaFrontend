@@ -20,7 +20,7 @@ export default function Footer() {
               Contáctanos</h1>
             <ul className="space-y-3">
               <li><a href="mailto:alextaraguay20@gmail.com" className="hover:text-white duration-300">alextaraguay20@gmail.com</a></li>
-              <li><a href="https://wa.me/593987110002" className="hover:text-white duration-300">+ 593 987 11 0002</a></li>
+              <li><a href="tel:+593987654321" className="hover:text-white duration-300">+ 593 992 953 397</a></li>
               <li className="uppercase">Latacunga 050102 - Ecuador</li>
             </ul>
           </div>
