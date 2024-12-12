@@ -1,21 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.640fa92a.css",
-    "main.js": "/static/js/main.888c83e8.js",
+    "main.css": "/static/css/main.535487c0.css",
+    "main.js": "/static/js/main.d35c5aeb.js",
     "static/media/fv.png": "/static/media/fv.e6e09d55131cf867fa62.png",
     "static/media/bg-register.jpg": "/static/media/bg-register.bf87f2182df7d14a6029.jpg",
     "static/media/bg-login.jpg": "/static/media/bg-login.9463b1375bc1a2f41c10.jpg",
+    "static/media/img2.jpg": "/static/media/img2.ac8f93ce6fb86b8ce871.jpg",
+    "static/media/img3.jpg": "/static/media/img3.b4fe02dc81f3439853c1.jpg",
     "service-worker.js": "/service-worker.js",
+    "static/media/img1.jpg": "/static/media/img1.a4ffad7964832e644bd5.jpg",
     "static/media/qsb.png": "/static/media/qsb.8a2e74e0c3bb6b6c1cfa.png",
     "static/media/logo-ef.png": "/static/media/logo-ef.7dec79ed178a9538eb6e.png",
     "static/media/norton.svg": "/static/media/norton.4397c3b546c3c44941f19461fafb81d0.svg",
     "static/media/truper.webp": "/static/media/truper.36fd7491ee85e9652324.webp",
     "index.html": "/index.html",
-    "main.640fa92a.css.map": "/static/css/main.640fa92a.css.map",
-    "main.888c83e8.js.map": "/static/js/main.888c83e8.js.map"
+    "main.535487c0.css.map": "/static/css/main.535487c0.css.map",
+    "main.d35c5aeb.js.map": "/static/js/main.d35c5aeb.js.map"
   },
   "entrypoints": [
-    "static/css/main.640fa92a.css",
-    "static/js/main.888c83e8.js"
+    "static/css/main.535487c0.css",
+    "static/js/main.d35c5aeb.js"
   ]
 }

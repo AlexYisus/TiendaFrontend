@@ -1,6 +1,12 @@
 import { FiShoppingCart } from "react-icons/fi"
 import { PiSpinner } from "react-icons/pi"
 import { Link } from "react-router-dom"
+import img1 from '../../assets/img/img1.jpg'
+import img2 from '../../assets/img/img2.jpg'
+import img3 from '../../assets/img/img3.jpg'
+import img4 from '../../assets/img/logo-ef.png'
+import { Carousel } from 'react-responsive-carousel'; // Importa el carrusel
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Importa los estilos del carrusel
 
 export default function ProductsArrival({
   data
@@ -8,7 +14,23 @@ export default function ProductsArrival({
   return (
     <div className="bg-white w-screen pt-12">
       <div className="w-full mx-auto pt-16 px-4 lg:max-w-7xl lg:px-8 flex flex-col justify-center items-center">
-
+      <h2 className="text-[30px] font-bold tracking-tight text-gray-900">Indispensables</h2>
+      <div className="w-full max-w-2xl mt-8">
+              <Carousel showThumbs={false} autoPlay infiniteLoop>
+              <div>
+                  <img src={img4} alt="Imagen 1" />
+                </div>
+                <div>
+                  <img src={img1} alt="Imagen 1" />
+                </div>
+                <div>
+                  <img src={img2} alt="Imagen 2" />
+                </div>
+                <div>
+                  <img src={img3} alt="Imagen 3" /> 
+                </div>
+              </Carousel>
+            </div>
             
         <h2 className="text-[30px] font-bold tracking-tight text-gray-900">Lo más reciente</h2>
 
