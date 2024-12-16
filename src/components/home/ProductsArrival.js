@@ -32,7 +32,7 @@ export default function ProductsArrival({
               </Carousel>
             </div>
             
-        <h2 className="text-[30px] font-bold tracking-tight text-gray-900">Lo más reciente</h2>
+        <h2 className="text-[30px] font-bold tracking-tight text-gray-900">Catálogos de nuestros productos</h2>
 
         <div className="mt-12 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 relative">
           {data ?
@@ -50,14 +50,14 @@ export default function ProductsArrival({
                 <div className="px-4 py-6 flex flex-col justify-center items-start border-t border-black/10 ">
                   <div>
                     <h3 className="text-lg text-black font-semibold">
-                      <Link to={`product/${product.id}`}>
+                      <Link to={`product/`}>
                         <span aria-hidden="true" className="absolute inset-0" />
                         {product.name}
                       </Link>
                     </h3>
                   </div>
-                  <p className="text-xl font-bold text-[#ca8a04]">${product.price}</p>
-                  <button className="mt-4 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white bg-gray-800 group-hover:bg-gray-700 duration-300 w-full"><FiShoppingCart className="mr-2" /> Añadir al carrito</button>
+                  <p className="text-xl font-bold text-[#ca8a04]">{/*product.price*/}</p>
+                  <button className="mt-4 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white bg-gray-800 group-hover:bg-gray-700 duration-300 w-full"><FiShoppingCart className="mr-2" /> Visualizar Catálogo</button>
                 </div>
               </div>
             )) : (
