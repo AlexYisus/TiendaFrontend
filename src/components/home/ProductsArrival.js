@@ -14,23 +14,6 @@ export default function ProductsArrival({
   return (
     <div className="bg-white w-screen pt-12">
       <div className="w-full mx-auto pt-16 px-4 lg:max-w-7xl lg:px-8 flex flex-col justify-center items-center">
-      <h2 className="text-[30px] font-bold tracking-tight text-gray-900">Indispensables</h2>
-      <div className="w-full max-w-2xl mt-8">
-              <Carousel showThumbs={false} autoPlay infiniteLoop>
-              <div>
-                  <img src={img4} alt="Imagen 1" />
-                </div>
-                <div>
-                  <img src={img1} alt="Imagen 1" />
-                </div>
-                <div>
-                  <img src={img2} alt="Imagen 2" />
-                </div>
-                <div>
-                  <img src={img3} alt="Imagen 3" /> 
-                </div>
-              </Carousel>
-            </div>
             
         <h2 className="text-[30px] font-bold tracking-tight text-gray-900">Catálogos de nuestros productos</h2>
 
