@@ -28,7 +28,7 @@ export default function ProductsArrival({
                 <div className="px-4 py-6 flex flex-col justify-center items-start border-t border-black/10 ">
                   <div>
                     <h3 className="text-lg text-black font-semibold">
-                      <Link to={`product/`}>
+                      <Link to={``}>
                         <span aria-hidden="true" className="absolute inset-0" />
                         {product.name}
                       </Link>
