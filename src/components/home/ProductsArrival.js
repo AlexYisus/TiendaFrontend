@@ -1,11 +1,6 @@
 import { FiShoppingCart } from "react-icons/fi"
 import { PiSpinner } from "react-icons/pi"
 import { Link } from "react-router-dom"
-import img1 from '../../assets/img/img1.jpg'
-import img2 from '../../assets/img/img2.jpg'
-import img3 from '../../assets/img/img3.jpg'
-import img4 from '../../assets/img/logo-ef.png'
-import { Carousel } from 'react-responsive-carousel'; // Importa el carrusel
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Importa los estilos del carrusel
 
 export default function ProductsArrival({

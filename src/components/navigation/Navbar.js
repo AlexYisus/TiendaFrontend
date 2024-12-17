@@ -131,12 +131,7 @@ function Navbar({
       <Link to="/" className="ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-white hover:bg-[#005eff]">
         Inicio
       </Link>
-      <Link
-        to="/login"
-        className="ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black bg-white hover:bg-[#005eff]"
-      >
-        Catálgo
-      </Link>
+      
     </Fragment>
   )
 

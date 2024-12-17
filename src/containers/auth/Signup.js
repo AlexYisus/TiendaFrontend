@@ -63,15 +63,14 @@ function Signup({ signup, loading, loginFail, error }) {
           <div className="sm:w-full sm:max-w-md">
             {}
             <h2 className="mt-6 max-md:mt-3 text-left text-4xl font-extrabold text-gray-900">
-              Registrate
+              Cotiza con nosotros
             </h2>
             <p className="mt-2 text-left text-base text-gray-600">
-              Si ya tienes una cuenta,{" "}
+              Rellena el siguiente formulario{" "}
               <Link
                 to="/login"
                 className="font-medium text-indigo-600 hover:text-indigo-500"
               >
-                Ingresa
               </Link>
             </p>
             {/* <p className="mt-2 text-left text-sm text-gray-600">
