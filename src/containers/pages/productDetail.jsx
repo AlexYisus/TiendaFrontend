@@ -99,9 +99,6 @@ const ProductDetail = ({
 
               <div className="mt-3">
                 <h2 className="sr-only">información del producto</h2>
-                <p className="text-3xl text-gray-900">
-                  {product && product.price}
-                </p>
               </div>
               <div className="mt-6">
                 <h3 className="sr-only">Descripción</h3>
@@ -114,16 +111,6 @@ const ProductDetail = ({
                 />
               </div>
               <div>
-                <p className="mt-4">
-                  {product &&
-                  product !== null &&
-                  product !== undefined &&
-                  product.quantity > 0 ? (
-                    <span className="text-green-500">In Stock</span>
-                  ) : (
-                    <span className="text-red-500">Out of Stock</span>
-                  )}
-                </p>
 
                 <div className="mt-6">
                   <div className="mt-10 flex sm:flex-col1">
