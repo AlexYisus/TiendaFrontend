@@ -1,24 +1,22 @@
-import { connect } from "react-redux"
-import Layout from "../../hocs/Layout"
-import { useParams, useSearchParams } from "react-router-dom"
-import { useNavigate } from "react-router-dom"
+import axios from "axios";
+import { connect } from "react-redux";
+import Layout from "../../hocs/Layout";
+import { useParams, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   get_product,
   get_related_products
-} from "../../redux/actions/products"
-import { useEffect, useState } from "react"
-import { HeartIcon } from '@heroicons/react/outline'
-import ImageGallery from "../../components/product/ImageGallery"
+} from "../../redux/actions/products";
+import { useEffect, useState } from "react";
+import { HeartIcon } from "@heroicons/react/outline";
+import ImageGallery from "../../components/product/ImageGallery";
 import {
   get_items,
   add_item,
   get_total,
   get_item_total
 } from "../../redux/actions/cart";
-import { PiSpinner } from "react-icons/pi"
-
-
-
+import { PiSpinner } from "react-icons/pi";
 
 const ProductDetail = ({
   get_product,
@@ -29,35 +27,62 @@ const ProductDetail = ({
   get_total,
   get_item_total
 }) => {
-
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
   const addToCart = async () => {
     try {
-      if (product && product !== null && product !== undefined && product.quantity > 0) {
-        setLoading(true)
+      if (
+        product &&
+        product !== null &&
+        product !== undefined &&
+        product.quantity > 0
+      ) {
+        setLoading(true);
         await add_item(product);
         await get_items();
         await get_total();
         await get_item_total();
-        setLoading(false)
-        navigate('/cart')
+        setLoading(false);
+        navigate("/cart");
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
-  const params = useParams()
-  const productId = params.productId
+  const downloadPDF = async () => {
+    if (!product || !product.id) return;
+
+    try {
+      const response = await axios.get(
+        `http://localhost:8000/api/products/${product.id}/download-pdf/`,
+        {
+          responseType: "blob", // Manejar el archivo como un blob
+        }
+      );
+
+      // Crear una URL para el archivo y disparar la descarga
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "product-info.pdf"); // Nombre del archivo
+      document.body.appendChild(link);
+      link.click();
+    } catch (error) {
+      console.error("Error descargando el archivo PDF:", error);
+    }
+  };
+
+  const params = useParams();
+  const productId = params.productId;
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-    get_product(productId)
-    get_related_products(productId)
-  }, [])
+    window.scrollTo(0, 0);
+    get_product(productId);
+    get_related_products(productId);
+  }, []);
 
   return (
     <Layout>
@@ -68,54 +93,50 @@ const ProductDetail = ({
 
             {/* Product info */}
             <div className="mt-10 px-4 sm:px-0 sm:mt-16 lg:mt-0">
-              <h1 className="text-3xl font-extrabold tracking-tight text-gray-900">{product && product.name}</h1>
+              <h1 className="text-3xl font-extrabold tracking-tight text-gray-900">
+                {product && product.name}
+              </h1>
 
               <div className="mt-3">
                 <h2 className="sr-only">información del producto</h2>
-                <p className="text-3xl text-gray-900">{product && product.price}</p>
+                <p className="text-3xl text-gray-900">
+                  {product && product.price}
+                </p>
               </div>
               <div className="mt-6">
-                <h3 className="sr-only">Descripciónn</h3>
+                <h3 className="sr-only">Descripción</h3>
 
                 <div
                   className="text-base text-gray-700 space-y-6"
-                  dangerouslySetInnerHTML={{ __html: product && product.description }}
+                  dangerouslySetInnerHTML={{
+                    __html: product && product.description,
+                  }}
                 />
               </div>
               <div>
                 <p className="mt-4">
-                  {
-                    product &&
-                      product !== null &&
-                      product !== undefined &&
-                      product.quantity > 0 ? (
-                      <span className='text-green-500'>
-                        In Stock
-                      </span>
-                    ) : (
-                      <span className='text-red-500'>
-                        Out of Stock
-                      </span>
-                    )
-                  }
+                  {product &&
+                  product !== null &&
+                  product !== undefined &&
+                  product.quantity > 0 ? (
+                    <span className="text-green-500">In Stock</span>
+                  ) : (
+                    <span className="text-red-500">Out of Stock</span>
+                  )}
                 </p>
 
                 <div className="mt-6">
-
-
                   <div className="mt-10 flex sm:flex-col1">
-                    {loading ? <button
-
-                      className="max-w-xs flex-1 bg-[#005eff] border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-[#005eff] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full" disabled
+                     
+                  </div>
+                  {/* Botón para descargar el PDF */}
+                  <div className="mt-4">
+                    <button
+                      onClick={downloadPDF}
+                      className="max-w-xs flex-1 bg-[#f59e0b] border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-[#d97706] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-yellow-500 sm:w-full"
                     >
-                      <PiSpinner className="text-2xl animate-spin" />
-                    </button> : <button
-                      onClick={addToCart}
-                      className="max-w-xs flex-1 bg-[#005eff] border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-[#005eff] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full"
-                    >
-                      Añadir al carrito
-                    </button>}
-
+                      Descargar Información en PDF
+                    </button>
                   </div>
                 </div>
 
@@ -123,7 +144,6 @@ const ProductDetail = ({
                   <h2 id="details-heading" className="sr-only">
                     Detalles adicionales
                   </h2>
-
                 </section>
               </div>
             </div>
@@ -131,12 +151,12 @@ const ProductDetail = ({
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-const mapStateToProps = state => ({
-  product: state.Products.product
-})
+const mapStateToProps = (state) => ({
+  product: state.Products.product,
+});
 
 export default connect(mapStateToProps, {
   get_product,
@@ -144,5 +164,5 @@ export default connect(mapStateToProps, {
   get_items,
   add_item,
   get_total,
-  get_item_total
-})(ProductDetail)
+  get_item_total,
+})(ProductDetail);

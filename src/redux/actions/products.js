@@ -219,3 +219,20 @@ export const get_search_products = (search, category_id) => async dispatch => {
         });
     }
 }
+export const downloadPDF = async (id) => {
+    try {
+      const response = await axios.get(`http://localhost:8000/download-pdf/${id}/`, {
+        responseType: 'blob', // Importante para manejar archivos
+      });
+  
+      // Crear una URL para el archivo y disparar la descarga
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'archivo.pdf'); // Nombre del archivo
+      document.body.appendChild(link);
+      link.click();
+    } catch (error) {
+      console.error('Error descargando el archivo:', error);
+    }
+  };
