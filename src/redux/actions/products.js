@@ -222,24 +222,23 @@ export const get_search_products = (search, category_id) => async dispatch => {
         });
     }
 }
-export const downloadPDF = (id) => async (dispatch) => {
-    dispatch({ type: DOWNLOAD_PDF_REQUEST });
-
+export const downloadPDF = async (productId) => {
     try {
-        const response = await axios.get(`http://localhost:8000/download-pdf/${id}/`, {
-            responseType: 'blob', // Importante para manejar archivos
-        });
-
-        const url = window.URL.createObjectURL(new Blob([response.data]));
-        const link = document.createElement('a');
-        link.href = url;
-        link.setAttribute('download', 'archivo.pdf'); // Nombre del archivo
-        document.body.appendChild(link);
-        link.click();
-
-        dispatch({ type: DOWNLOAD_PDF_SUCCESS });
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/products/${productId}/download-pdf/`,
+        {
+          responseType: "blob",
+        }
+      );
+  
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "product-info.pdf");
+      document.body.appendChild(link);
+      link.click();
     } catch (error) {
-        console.error('Error descargando el archivo:', error);
-        dispatch({ type: DOWNLOAD_PDF_FAIL });
+      console.error("Error descargando el archivo PDF:", error);
+      
     }
-};
+  };
