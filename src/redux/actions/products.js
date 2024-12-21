@@ -14,6 +14,9 @@ import {
     RELATED_PRODUCTS_FAIL,
     FILTER_PRODUCTS_SUCCESS,
     FILTER_PRODUCTS_FAIL,
+    DOWNLOAD_PDF_REQUEST,
+    DOWNLOAD_PDF_SUCCESS,
+    DOWNLOAD_PDF_FAIL,
 } from './types';
 
 export const get_products = () => async dispatch => {
@@ -219,20 +222,24 @@ export const get_search_products = (search, category_id) => async dispatch => {
         });
     }
 }
-export const downloadPDF = async (id) => {
+export const downloadPDF = (id) => async (dispatch) => {
+    dispatch({ type: DOWNLOAD_PDF_REQUEST });
+
     try {
-      const response = await axios.get(`http://localhost:8000/download-pdf/${id}/`, {
-        responseType: 'blob', // Importante para manejar archivos
-      });
-  
-      // Crear una URL para el archivo y disparar la descarga
-      const url = window.URL.createObjectURL(new Blob([response.data]));
-      const link = document.createElement('a');
-      link.href = url;
-      link.setAttribute('download', 'archivo.pdf'); // Nombre del archivo
-      document.body.appendChild(link);
-      link.click();
+        const response = await axios.get(`http://localhost:8000/download-pdf/${id}/`, {
+            responseType: 'blob', // Importante para manejar archivos
+        });
+
+        const url = window.URL.createObjectURL(new Blob([response.data]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', 'archivo.pdf'); // Nombre del archivo
+        document.body.appendChild(link);
+        link.click();
+
+        dispatch({ type: DOWNLOAD_PDF_SUCCESS });
     } catch (error) {
-      console.error('Error descargando el archivo:', error);
+        console.error('Error descargando el archivo:', error);
+        dispatch({ type: DOWNLOAD_PDF_FAIL });
     }
-  };
+};
